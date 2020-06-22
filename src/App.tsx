@@ -20,6 +20,20 @@ function App() {
         >
           Learn React
         </a>
+        <button
+          onClick={() => {
+            axios
+              .get("https://dog.ceo/api/breeds/image/random")
+              .then((response) => {
+                console.log(response.data);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          }}
+        >
+          Howdy!
+        </button>
       </header>
     </div>
   );
