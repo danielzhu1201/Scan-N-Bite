@@ -4,7 +4,7 @@ import ComHeader from "../components/ComHeader";
 import ComFooter from "../components/ComFooter";
 import CheckBody from "../components/TypeBody";
 
-import "./.css";
+import "./Check.css";
 
 function Check(){
     return (
