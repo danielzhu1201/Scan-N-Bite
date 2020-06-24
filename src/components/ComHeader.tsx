@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+import modules from "./styles/ComHeader.module.css"
+
 export default class ComHeader extends Component {
   render() {
     return (
-      <header className="top-header">
-        <h1 className="top-text">Menu</h1>
-      </header>
+      <header className={modules.TopHeader}>
+        <h1 className={modules.TopText}>Menu</h1>
+      </header >
     );
   }
 }
