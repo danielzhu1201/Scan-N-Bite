@@ -13,7 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   root: {
     color: '#6e501b',
-    fontSize: '32px',
+    fontSize: '31px',
   }
 });
 
