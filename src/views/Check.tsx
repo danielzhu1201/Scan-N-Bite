@@ -6,7 +6,7 @@ import CheckBody from "../components/TypeBody";
 
 import "./.css";
 
-function(){
+function Check(){
     return (
         <div>
             <ComHeader />
@@ -16,4 +16,4 @@ function(){
     );
 }
 
-export default ; 
+export default Check; 
