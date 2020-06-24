@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { useHistory } from "react-router-dom";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+
+import modules from "./styles/ArrowBack.module.css";
 
 function ArrowBack() {
   const history = useHistory();
@@ -9,8 +12,8 @@ function ArrowBack() {
   }
 
   return (
-    <button type="button" onClick={handleClick} className="top-arrow">
-      Arrow
+    <button className={modules.TopArrow} type="button" onClick={handleClick}>
+      <ArrowBackIcon fontSize="large" />
     </button>
   );
 }
