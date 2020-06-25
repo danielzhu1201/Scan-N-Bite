@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
-export default class ComHeader extends Component {
-  render() {
-    return (
-      <header className="top-header">
-        <h1 className="top-text">Menu</h1>
-      </header>
-    );
-  }
+import modules from "./styles/ComHeader.module.css"
+
+export default function ComHeader() {
+  const [title, setTitle] = useState('Menu');
+  return (
+    <header className={modules.Header}>
+      <div className={modules.HeaderTitle}>{title}</div>
+    </header>
+  )
 }
 
