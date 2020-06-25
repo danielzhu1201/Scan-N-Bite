@@ -1,14 +1,14 @@
 import React from "react";
 
 import ArrowBack from "../components/ArrowBack";
-import TypeBody from "../components/TypeBody";
+import MenuItems from "../components/MenuItems";
 
 
 function TypeOfFood() {
   return (
     <div>
       <ArrowBack />
-      <TypeBody />
+      <MenuItems />
     </div>
   );
 }

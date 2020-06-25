@@ -3,26 +3,46 @@ import { NavLink } from "react-router-dom";
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import ReceiptIcon from '@material-ui/icons/Receipt';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import { makeStyles } from '@material-ui/core/styles';
 
 import modules from "./styles/ComFooter.module.css";
 
-export default class ComFooter extends Component {
-  render() {
-    return (
-      <div className={modules.Container}>
-        <NavLink className={modules.FooterFont} to="/NotFound">
-          <RestaurantIcon />
-          Menu
-        </NavLink>
-        <NavLink className={modules.FooterFont} to="/NotFound">
-          <ReceiptIcon />
-          Check
-        </NavLink>
-        <NavLink className={modules.FooterFont} to="/NotFound">
-          <PersonOutlineIcon />
-          Profile
-        </NavLink>
-      </div>
-    );
-  }
+const useStyles = makeStyles({
+  root: {
+    color: '#6e501b',
+    fontSize: '31px',
+  },
+});
+
+export default function ComFooter() {
+  const classes = useStyles();
+  return (
+    <div className={modules.Footer}>
+      <NavLink className={modules.FooterLink} to="/NotFound">
+        <RestaurantIcon
+          classes={{
+            root: classes.root,
+          }}
+        />
+        <p className={modules.FootText}>Menu</p>
+      </NavLink>
+      <NavLink className={modules.FooterLink} to="/NotFound">
+        <ReceiptIcon
+          classes={{
+            root: classes.root,
+          }}
+        />
+        <p className={modules.FootText}>Check</p>
+      </NavLink>
+      <NavLink className={modules.FooterLink} to="/NotFound">
+        <PersonOutlineIcon
+          classes={{
+            root: classes.root,
+          }}
+        />
+        <p className={modules.FootText}>Profile</p>
+      </NavLink>
+    </div>
+  );
 }
+
