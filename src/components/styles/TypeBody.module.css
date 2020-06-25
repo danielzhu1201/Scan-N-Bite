@@ -1,0 +1,55 @@
+.TypeLogo {
+  display: flex;
+
+  position: absolute;
+  width: 100%;
+  height: 159px;
+  left: 0px;
+  top: 50px;
+
+  background-color:#C4C4C4
+}
+
+.Menu{
+  display: flex;
+ 
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 209px;
+}
+
+
+.SubText{
+  display: flex;
+  position: absolute;
+  left: 15px;
+  top: 18px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  
+  color: #000000;
+}
+
+
+.MenuItems{
+  display: flex;
+  flex-flow: row wrap;
+  position: absolute;
+  width: 159px;
+  /*height: 26px; */
+  left: 27px;
+  top: 69px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+
+  color: #000000;
+}

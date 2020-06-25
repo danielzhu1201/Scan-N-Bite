@@ -1,0 +1,13 @@
+/* Not Sure about the Arrow Css */
+.TopArrow {
+  position: absolute;
+  left: 2%;
+  top: 8%;
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
