@@ -4,6 +4,7 @@ import { Container } from "@material-ui/core";
 
 import modules from "./styles/CheckBody.module.css";
 import CheckItem from "./CheckItems";
+import CheckOutButtion from "./CheckoutButton"
 
 export default class CheckBody extends React.Component{
     render(){
@@ -17,6 +18,8 @@ export default class CheckBody extends React.Component{
                     <CheckItem/>
                     <CheckItem/>
                     <CheckItem/>
+                    <CheckItem/>
+                    <CheckOutButtion/>
                 </div>
             </div>
         </div> 
