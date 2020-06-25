@@ -8,10 +8,10 @@ export default function checkItem() {
     const itemCost = "$ 5.75"
   
     return (
-      <div>
+      <div className={modules.item}>
         <h1 className={modules.itemName}>
-            {itemName} x {itemQuantity}
-
+            {itemName}
+            <div className={modules.itemQuant}>x{itemQuantity} </div>
             <img src={logo} className={modules.itemPic}/>
         </h1>
         <h2 className={modules.itemPrice}>

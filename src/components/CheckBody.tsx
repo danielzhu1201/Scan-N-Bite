@@ -14,6 +14,9 @@ export default class CheckBody extends React.Component{
                 <h1 className={modules.checkTitle}> Your Check</h1>
                 <div className={modules.orderedItems}>
                     <CheckItem/>
+                    <CheckItem/>
+                    <CheckItem/>
+                    <CheckItem/>
                 </div>
             </div>
         </div> 

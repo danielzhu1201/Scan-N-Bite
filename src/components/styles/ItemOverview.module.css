@@ -53,9 +53,10 @@
   width: 60px;
   height: 60px;
   left: 180%;
+  top: 50px;
   background: #C4C4C4;
   border-radius: 10px;
   /* display:inline; */
   /* white-space:nowrap; */
- 
+  
 }
