@@ -3,44 +3,29 @@ import logo from "../logo.svg";
 import { Container } from "@material-ui/core";
 
 export default function CheckBody() {
-    const itemName = "Item Name Here"
+    const itemName = "Item Name Here!"
     const itemQuantity = "1"
-    const itemCost = "75.00"
+    const itemCost = "$ 5.75"
 
     return (
       <div className="flex-container">
+          <div className="img">
+                <img src={logo} className="type-logo" alt="logo" />
+            </div>
           <div className="check">
             <div className="checkHeader">
-                <h1 className="checkItems"> Your Check</h1>
+                <h1 className="checkHeaderText"> Your Check</h1>
             </div>
             <div className="Item">
-                <h1 className="ItemName">
+                <div className="ItemName">
                     {itemName} x{`${itemQuantity}`}
                     <img src={logo} className="item-pic" />
-                </h1>
-                <h2 className="ItemCost">
+                    <div className="ItemCost">
                     {itemCost}
-                </h2>
+                </div>
+                </div>
             </div>
-            <div className="Item">
-                <h1 className="ItemName">
-                    {itemName} x{`${itemQuantity}`}
-                    <img src={logo} className="item-pic" />
-                </h1>
-                <h2 className="ItemCost">
-                    {itemCost}
-                </h2>
-            </div>
-            <div className="Item">
-                <h1 className="ItemName">
-                    {itemName} x{`${itemQuantity}`}
-                    <img src={logo} className="item-pic" />
-                </h1>
-                <h2 className="ItemCost">
-                    {itemCost}
-                </h2>
-            </div>
-        </div>
+        </div>    
         <div className="CheckOut">
               <button type="button" className="checkoutButton">
                   <div className="buttonText">

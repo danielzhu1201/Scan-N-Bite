@@ -11,7 +11,6 @@ function Check(){
         <div>
             <ComHeader />
             <CheckBody />
-            <ComFooter />
         </div>
     );
 }

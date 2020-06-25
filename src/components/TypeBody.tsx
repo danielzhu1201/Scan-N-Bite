@@ -9,7 +9,6 @@ export default function TypeBody() {
 
   return (
     <div className="menu-body">
-      <img src={logo} className="type-logo" alt="logo" />
       <div className="menu">
         <h1 className="sub-text">Menu</h1>
         <div className="menu-items">
