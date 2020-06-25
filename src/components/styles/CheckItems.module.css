@@ -1,0 +1,30 @@
+.itemPic{
+    display: flex;
+    position: relative;
+    
+    width: 60px;
+    height: 60px;
+    left: 180%;
+    background: #C4C4C4;
+    border-radius: 10px;
+    /* display:inline; */
+    /* white-space:nowrap; */
+  }
+
+  .itemName {
+    display: flex;
+    position: relative;
+    height: 26px;
+    
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    
+    color: #000000;
+  }
+
+  .itemPrice {
+
+  }
