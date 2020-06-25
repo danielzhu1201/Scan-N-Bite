@@ -2,7 +2,7 @@ import React from "react";
 
 import ComHeader from "../components/ComHeader";
 import ComFooter from "../components/ComFooter";
-import CheckBody from "../components/TypeBody";
+import CheckBody from "../components/CheckBody";
 
 import "./Check.css";
 

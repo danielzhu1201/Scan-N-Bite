@@ -1,4 +1,6 @@
-import React from "react"
+import React from "react";
+import logo from "../logo.svg";
+import { Container } from "@material-ui/core";
 
 export default function CheckBody() {
     const itemName = "Item Name Here"
@@ -6,26 +8,46 @@ export default function CheckBody() {
     const itemCost = "75.00"
 
     return (
-      <div className="check-body">
+      <div className="flex-container">
           <div className="check">
-              <h1 className="CheckTitle">Your Check</h1>
-              <div className="checkItems">
-                  <div className="Item1">
-                      <h1 className="ItemName">
-                          {itemName}
-                      </h1>
-                      <h2 className="ItemCost">
-                          {itemCost}
-                      </h2>
-                      <h3>
-                        x{`${itemQuantity}`}
-                      </h3>
-                  </div>
-              </div>
-          </div>
-          <div className="CheckOut">
-              <button type="button">Checkout</button>
-          </div>
+            <div className="checkHeader">
+                <h1 className="checkItems"> Your Check</h1>
+            </div>
+            <div className="Item">
+                <h1 className="ItemName">
+                    {itemName} x{`${itemQuantity}`}
+                    <img src={logo} className="item-pic" />
+                </h1>
+                <h2 className="ItemCost">
+                    {itemCost}
+                </h2>
+            </div>
+            <div className="Item">
+                <h1 className="ItemName">
+                    {itemName} x{`${itemQuantity}`}
+                    <img src={logo} className="item-pic" />
+                </h1>
+                <h2 className="ItemCost">
+                    {itemCost}
+                </h2>
+            </div>
+            <div className="Item">
+                <h1 className="ItemName">
+                    {itemName} x{`${itemQuantity}`}
+                    <img src={logo} className="item-pic" />
+                </h1>
+                <h2 className="ItemCost">
+                    {itemCost}
+                </h2>
+            </div>
         </div>
+        <div className="CheckOut">
+              <button type="button" className="checkoutButton">
+                  <div className="buttonText">
+                    Checkout
+                  </div>
+              </button>
+            </div>
+    </div> 
     );
   }
