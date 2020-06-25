@@ -1,0 +1,45 @@
+/* .menuCategory {
+  width: 100%;
+  height: 60%;
+
+  top: 0px;
+
+  background-color: brown;
+} */
+
+
+.menuCategory__categoryWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+
+  width: 100%;
+
+}
+
+.menuCategory__category {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+
+  padding: 15px 0px;
+}
+
+/* .menuCategory__category__left {
+
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 25px; */
+  /* border: 1px solid red;
+
+} */
+
+/* .menuCategory__category__right {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 25px;
+} */
