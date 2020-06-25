@@ -3,9 +3,9 @@ import logo from "../logo.svg";
 
 import ItemOverview from "./ItemOverview";
 
-import modules from "./styles/TypeBody.module.css"
+import modules from "./styles/MenuItems.module.css"
 
-export default class TypeBody extends React.Component {
+export default class MenuItems extends React.Component {
   render() {
     return (
       <div>
