@@ -1,0 +1,62 @@
+
+  .TypeLogo {
+    display: flex;
+    
+    position: relative;
+    width: 100%;
+    height: 159px;
+    left: 0px;
+    top: 50px;
+    
+    background-color:#C4C4C4
+  }
+
+  .check {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 209px;
+    left: 0px
+  }
+
+  .checkTitle {
+    display: flex;
+    position: relative;
+    left: 15px;
+
+    margin-block-end: 0px;
+    margin-block-start: 10px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 33px;
+  
+    color: #000000;
+  }
+
+  .orderedItems {
+    display: flex;
+    flex-flow: column wrap;
+    position: absolute;
+    width: 40%;
+    left: 27px;
+    top: 45px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: #000000;
+  }
+
+  .checkOut {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .button {
+
+  }
