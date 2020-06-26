@@ -1,6 +1,5 @@
 import React from 'react'
 
-import logo from "../logo.svg";
 import modules from "./styles/CheckOutButton.module.css"
 export default function CheckoutButton() {
     return (
