@@ -18,7 +18,7 @@ export default function ComFooter() {
   const classes = useStyles();
   return (
     <div className={modules.Footer}>
-      <NavLink className={modules.FooterLink} to="/NotFound">
+      <NavLink className={modules.FooterLink} to="/menu">
         <RestaurantIcon
           classes={{
             root: classes.root,
@@ -26,7 +26,7 @@ export default function ComFooter() {
         />
         <p className={modules.FootText}>Menu</p>
       </NavLink>
-      <NavLink className={modules.FooterLink} to="/NotFound">
+      <NavLink className={modules.FooterLink} to="/check">
         <ReceiptIcon
           classes={{
             root: classes.root,
@@ -34,7 +34,7 @@ export default function ComFooter() {
         />
         <p className={modules.FootText}>Check</p>
       </NavLink>
-      <NavLink className={modules.FooterLink} to="/NotFound">
+      <NavLink className={modules.FooterLink} to="/profile">
         <PersonOutlineIcon
           classes={{
             root: classes.root,
