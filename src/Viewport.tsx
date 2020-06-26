@@ -7,6 +7,8 @@ import TypyOfFood from "./views/TypeOfFood"
 import Check from "./views/Check"
 import ComHeader from "./components/ComHeader";
 import ComFooter from "./components/ComFooter";
+import MenuCategory from "./views/Category"
+import FoodInfo from './views/FoodInfo';
 
 //http://localhost:3000/menu/specific
 
@@ -18,8 +20,10 @@ export default function Viewport() {
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/NotFound" component={NotFoundPage} />
-          <Route exact path="/Check" component={Check}/>
+          <Route exact path="/Check" component={Check} />
           <Route exact path="/menu/specific" component={TypyOfFood} />
+          <Route exact path="/menu" component={MenuCategory} />
+          <Route exact path="/food" component={FoodInfo} />
         </Switch>
         <ComFooter />
       </Router>

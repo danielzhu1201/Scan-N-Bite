@@ -1,0 +1,19 @@
+.FoodInfo {
+  margin-top: 50px;
+}
+
+
+.FoodInfoArrowBack {
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+.FoodInfoDescriptionWrapper {
+  padding-bottom: 90px;
+}
+
+.FoodInfoOrderButton {
+  bottom: 80px;
+
+}
