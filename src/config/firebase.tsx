@@ -1,5 +1,6 @@
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import 'firebase/auth'
 
 // web app's Firebase configuration
 var firebaseConfig = {

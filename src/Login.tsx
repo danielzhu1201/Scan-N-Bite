@@ -1,58 +1,51 @@
 import React, {Component} from 'react';
-import firebaseApp from './config/firebase'
-// import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebaseApp from './config/firebase'; 
+import 'firebase/auth';
+import uiConfig from './config/uiConfig'; 
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 class Login extends Component<any, any> {
     constructor(props: any) {
         super(props); 
-        this.login = this.login.bind(this); 
-        this.handleChange = this.handleChange.bind(this); 
-        this.signup = this.signup.bind(this); 
+        // this.login = this.login.bind(this); 
+        // this.handleChange = this.handleChange.bind(this); 
+        // this.signup = this.signup.bind(this); 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            fireErrors: ''
         }
     }
 
-    login(e) {
+    login = (e) => {
         e.preventDefault(); 
         firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then((u) => {
             console.log("success"); 
         })
         .catch((error) => {
-            console.log(error); 
+            this.setState({fireErrors: error.message})  
         }); 
     }
 
-    signup(e) {
+    signup = (e) => {
         e.preventDefault(); 
         firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .catch((error) => {
-            console.log(error); 
+            this.setState({fireErrors: error.message})  
         }); 
     }
 
-    handleChange(e) {
-        this.setState({[e.target.name]: e.target.value})
+    handleChange = e => {
+        this.setState({[e.target.name]: e.target.value}); 
     }
 
-    // uiConfig = { 
-    //     signInFlow: 'popup', 
-    //     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-    //     signInOptions: [
-    //         // Leave the lines as is for the providers you want to offer your users.
-    //         provider: firebaseApp.auth.GoogleAuthProvider.PROVIDER_ID,            
-    //     ],
-    //     callbacks: { 
-    //       // Avoid redirects after sign-in. 
-    //       signInSuccessWithAuthResult: () => false 
-    //     } 
-    // }; 
-
     render() {
+        let errorNotification = this.state.fireErrors ? (<div>{this.state.fireErrors}</div>) : null; 
+
         return(
             <div>
+                {errorNotification}
                 <form>
                     <label>Email Address</label>
                     <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="txtEmail" placeholder="Enter Email"></input>
@@ -61,6 +54,7 @@ class Login extends Component<any, any> {
 
                     <button type="submit" onClick={this.login}>Login</button>
                     <button onClick={this.signup}>Signup</button>
+                    <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseApp.auth()}/>
                 </form>
             </div>
         ); 

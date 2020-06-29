@@ -5,6 +5,9 @@ import axios from "axios";
 import firebaseApp from "./config/firebase";
 import Login from "./Login";
 import Home from "./Home";
+import Viewport from "./Viewport";
+import { Redirect } from "react-router";
+import NotFound from "./NotFoundPage";
 
 // function App() {
 //   return (
@@ -42,7 +45,7 @@ class App extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      user: {},
+      user: null,
     };
   }
 
@@ -52,7 +55,7 @@ class App extends Component<any, any> {
 
   authListener() {
     firebaseApp.auth().onAuthStateChanged((user) => {
-      console.log(user);
+      // console.log(user);
       if (user) {
         this.setState({ user });
       } else {
