@@ -9,10 +9,13 @@
   height: 50px;
   left: 0px;
   bottom: 0px;
-  background: #FAAA13;
+
+  /* background: #FAAA13; */
+  background-image: linear-gradient(to left, #FAAA13, #ffc107);
+  /* box-shadow:inset 0px 15px 5px -13px  #ffffff; */
 }
 
-.FootLink {
+.FooterLink {
   text-decoration: none !important;
   text-align: center;
 }

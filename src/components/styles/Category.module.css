@@ -1,0 +1,47 @@
+.MenuCategory {
+  margin-top: 50px;
+}
+
+
+.MenuCategoryCategoryWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+
+  
+  /* prevent footer overlap bottom category component*/
+  padding-bottom: 80px; 
+
+  width: 100%;
+
+}
+
+.MenuCategoryCategory {
+  /* border: 1px solid red; */
+
+  box-sizing: border-box;
+  flex: 0 0 50%;
+
+  margin-left: 20%;
+  padding: 15px 0px;
+}
+
+.menuCategory__category__left {
+
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  padding-left: 5.5%;
+  padding-right: 1.2%;
+  padding-top: 25px; 
+  /* /* border: 1px solid red; */
+
+} 
+
+.menuCategory__category__right {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  padding-left: 1.2%;
+  padding-right: 5.5%;
+  padding-top: 25px;
+}
