@@ -10,89 +10,36 @@ const Category: React.FC = () => {
   const matches = useMediaQuery("(min-width:360px)");
   console.log(matches);
   return (
-    <div className={modules.MenuCategory}>
+    <div className={modules.Container}>
       <div>
         <Headline title="Bon Appétit!" imageURL="/Fruits.jpg" />
       </div>
-      {!matches ? (
-        <div className={modules.MenuCategoryCategoryWrapper}>
-          <div className={modules.MenuCategoryCategory}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.MenuCategoryCategory}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.MenuCategoryCategory}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.MenuCategoryCategory}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.MenuCategoryCategory}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.MenuCategoryCategory}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-        </div>
-      ) : (
-        <div className={modules.MenuCategoryCategoryWrapper}>
-          <div className={modules.menuCategory__category__left}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.menuCategory__category__right}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.menuCategory__category__left}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.menuCategory__category__right}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.menuCategory__category__left}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-          <div className={modules.menuCategory__category__right}>
-            <FoodCategory
-              category="Appetizers"
-              desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
-            />
-          </div>
-        </div>
-      )}
+      <div className={modules.FoodCategory}>
+        <FoodCategory
+          category="Appetizers"
+          desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
+        />
+        <FoodCategory
+          category="Appetizers"
+          desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
+        />
+        <FoodCategory
+          category="Appetizers"
+          desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
+        />
+        <FoodCategory
+          category="Appetizers"
+          desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
+        />
+        <FoodCategory
+          category="Appetizers"
+          desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
+        />
+        <FoodCategory
+          category="Appetizers"
+          desc="Descriptions here and they wrap they wrap they wrap they wrap they wrap!!"
+        />
+      </div>
     </div>
   );
 };

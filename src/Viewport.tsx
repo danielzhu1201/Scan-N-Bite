@@ -17,15 +17,19 @@ export default function Viewport() {
     <div>
       <Router>
         <ComHeader />
-        <Switch>
-          <Route exact path="/" component={MenuCategory} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/specific" component={TypyOfFood} />
-          <Route exact path="/food" component={FoodInfo} />
-          <Route exact path="/check" component={Check} />
-          <Route exact path="/profile" component={NotFoundPage} />
-        </Switch>
+        <div style={{ margin: "60px 0px" }}>
+          {" "}
+          {/*Ensure main page not hid by footer and header*/}
+          <Switch>
+            <Route exact path="/" component={MenuCategory} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/specific" component={TypyOfFood} />
+            <Route exact path="/food" component={FoodInfo} />
+            <Route exact path="/check" component={Check} />
+            <Route exact path="/profile" component={NotFoundPage} />
+          </Switch>
+        </div>
         <ComFooter />
       </Router>
     </div>
