@@ -1,61 +1,58 @@
-.Name{
-  width: 159px;
-  height: 26px;
-  left: 27px;
-  top: 278px;
+.Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
 
+.Name {
   font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 27px;
   color: #000000;
+  margin-bottom: 10px;
 }
 
-.Description{
-  width: 265px;
-  height: 19px;
-  left: 27px;
-  top: 307px;
-
+.Description {
   font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
   /* identical to box height */
-  color: #75787B;
-
+  color: #75787b;
+  margin-bottom: 5px;
 }
 
-.PriceCal{
-  width: 141px;
-  height: 19px;
-  left: 27px;
-  top: 329px;
-
+.PriceCal {
   font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
   /* identical to box height */
-
+  margin-bottom: 5px;
 
   color: #000000;
 }
 
-/* Where should this img should be, need help to fix*/
-.ItemPic{
+.TextContainer {
   display: flex;
-  position: absolute;
-  
+  flex-direction: column;
+  max-width: 280px;
+}
+
+.ImageContainer {
+  display: flex;
+  width: 60px;
+  align-items: center;
+}
+
+/* Where should this img should be, need help to fix*/
+.ItemPic {
   width: 60px;
   height: 60px;
-  left: 180%;
-  background: #C4C4C4;
   border-radius: 10px;
-  /* display:inline; */
-  /* white-space:nowrap; */
-  
 }

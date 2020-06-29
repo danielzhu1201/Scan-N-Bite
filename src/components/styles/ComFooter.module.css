@@ -1,6 +1,5 @@
 .Footer {
   position: fixed;
-
   display: flex;
   flex-flow: row;
   justify-content: space-around;
@@ -9,10 +8,10 @@
   height: 50px;
   left: 0px;
   bottom: 0px;
-
   /* background: #FAAA13; */
   background-image: linear-gradient(to left, #faaa13, #ffc107);
   /* box-shadow:inset 0px 15px 5px -13px  #ffffff; */
+  z-index: 100;
 }
 
 .FooterLink {

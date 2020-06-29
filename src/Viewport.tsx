@@ -14,22 +14,18 @@ import FoodInfo from "./views/FoodInfo";
 
 export default function Viewport() {
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       <Router>
         <ComHeader />
-        <div style={{ margin: "60px 0px" }}>
-          {" "}
-          {/*Ensure main page not hid by footer and header*/}
-          <Switch>
-            <Route exact path="/" component={MenuCategory} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/specific" component={TypyOfFood} />
-            <Route exact path="/food" component={FoodInfo} />
-            <Route exact path="/check" component={Check} />
-            <Route exact path="/profile" component={NotFoundPage} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/" component={MenuCategory} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/specific" component={TypyOfFood} />
+          <Route exact path="/food" component={FoodInfo} />
+          <Route exact path="/check" component={Check} />
+          <Route exact path="/profile" component={NotFoundPage} />
+        </Switch>
         <ComFooter />
       </Router>
     </div>
