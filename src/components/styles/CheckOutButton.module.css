@@ -1,28 +1,27 @@
-.wrapper {
-    position: relative;
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    width: 200%;
-    bottom: 0px;
-    margin: 10px;
+.Container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 230px;
+  bottom: 70px;
+  margin: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
 .button {
-    
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background: #FDBB0A;
-    border: 0;
-    width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: #fdbb0a;
+  border: 0;
+  width: 100%;
 
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 38px;
-    padding: 0px;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+  padding: 0px;
 }
