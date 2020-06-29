@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   root: {
     color: "#6e501b",
     fontSize: "31px",
+    textDecoration: "none",
   },
 });
 

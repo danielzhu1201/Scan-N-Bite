@@ -1,15 +1,17 @@
 .FoodCatogory {
-  width: 150px;
-  height: 150px;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: fit-content;
+  padding: 5px 10px 5px 0px;
   background: #ffffff;
   border-radius: 10px;
 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  margin-bottom: 10px;
 
   /* border: 0.5px solid #e0e0e0; */
-  box-shadow:0 0 5px #9e9e9e;
+  box-shadow: 0 0 5px #9e9e9e;
 }
 
 .FoodCategoryImg {
@@ -26,7 +28,7 @@
 }
 
 .FoodCategoryCategoryName {
-  margin: 5px 0px 5px 10px;
+  margin: 10px 0px 5px 10px;
 
   font-family: Nunito;
   font-style: normal;
@@ -47,5 +49,4 @@
   line-height: 19px;
 
   color: #000000;
-
 }
