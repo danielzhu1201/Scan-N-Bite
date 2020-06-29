@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
-import firebaseApp from './config/firebase';
-import Login from './Login';
-import Home from './Home'
+import firebaseApp from "./config/firebase";
+import Login from "./Login";
+import Home from "./Home";
 
 // function App() {
 //   return (
@@ -38,33 +38,37 @@ import Home from './Home'
 
 // export default App;
 
-
 class App extends Component<any, any> {
   constructor(props: any) {
-    super(props); 
+    super(props);
     this.state = {
-      user: {} 
-    }
+      user: {},
+    };
   }
 
   componentDidMount() {
-    this.authListener(); 
+    this.authListener();
   }
 
   authListener() {
     firebaseApp.auth().onAuthStateChanged((user) => {
-      console.log(user); 
+      console.log(user);
       if (user) {
-        this.setState({user}); 
+        this.setState({ user });
       } else {
-        this.setState({user: null}); 
+        this.setState({ user: null });
       }
     });
   }
 
   render() {
     return (
-      <div className="App">
+      <div
+        className="App"
+        style={{
+          margin: "100px 0px",
+        }}
+      >
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -81,11 +85,10 @@ class App extends Component<any, any> {
           </a>
         </header> */}
 
-        {this.state.user ? (<Home/>) : (<Login/>)}
-        
+        {this.state.user ? <Home /> : <Login />}
       </div>
-    ); 
+    );
   }
 }
 
-export default App; 
+export default App;
