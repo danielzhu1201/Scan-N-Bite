@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import App from "./App";
 import NotFoundPage from "./NotFoundPage";
-import TypyOfFood from "./views/TypeOfFood"
-import Check from "./views/Check"
+import TypyOfFood from "./views/TypeOfFood";
+import Check from "./views/Check";
 import ComHeader from "./components/ComHeader";
 import ComFooter from "./components/ComFooter";
-import MenuCategory from "./views/Category"
-import FoodInfo from './views/FoodInfo';
+import MenuCategory from "./views/Category";
+import FoodInfo from "./views/FoodInfo";
 
 //http://localhost:3000/menu/specific
 
