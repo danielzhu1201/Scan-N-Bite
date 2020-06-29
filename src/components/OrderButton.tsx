@@ -5,6 +5,7 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import Button from "@material-ui/core/Button";
 
 import modules from "./styles/OrderButton.module.css";
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,6 +35,7 @@ const OrderButton: React.FC<OrderButtonProps> = ({ price }) => {
   return (
     <div className={modules.OrderButton}>
       <Button
+        onClick={() => ToastsStore.success("Added Sucessful!")}
         variant="contained"
         color="primary"
         startIcon={<ShoppingCartOutlinedIcon />}
@@ -44,6 +46,7 @@ const OrderButton: React.FC<OrderButtonProps> = ({ price }) => {
       >
         {price}
       </Button>
+      <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.TOP_CENTER} lightBackground />
     </div>
   );
 };
