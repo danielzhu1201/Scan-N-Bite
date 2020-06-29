@@ -20,7 +20,7 @@ export default function Viewport() {
           <Route exact path="/" component={App} />
           <Route exact path="/NotFound" component={NotFoundPage} />
           <Route exact path="/menu/specific" component={TypyOfFood} />
-          <Route path="/login" component={Login} /> 
+          <Route path="/login" component={App} /> 
           <Route path="/home" component={Home} /> 
         </Switch>
         {/* <ComFooter /> */}
