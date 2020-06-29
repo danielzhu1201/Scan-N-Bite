@@ -24,7 +24,7 @@ export default function Viewport() {
           <Route exact path="/specific" component={TypyOfFood} />
           <Route exact path="/food" component={FoodInfo} />
           <Route exact path="/check" component={Check} />
-          <Route exact path="/profile" component={NotFoundPage} />
+          <Route component={NotFoundPage} />
         </Switch>
         <ComFooter />
       </Router>

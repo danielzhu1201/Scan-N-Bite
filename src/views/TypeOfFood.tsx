@@ -16,12 +16,48 @@ function TypeOfFood() {
       />
       <div className={modules.TitleText}>Select Your Favourite Dishes</div>
       <div className={modules.ItemContainer}>
-        <ItemOverview />
-        <ItemOverview />
-        <ItemOverview />
-        <ItemOverview />
-        <ItemOverview />
-        <ItemOverview />
+        <ItemOverview
+          itemName="Item name here!"
+          desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."
+          price="$100.00"
+          cal="150 Cal."
+          imageURL="/food.jpg"
+        />
+        <ItemOverview
+          itemName="Item name here!"
+          desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."
+          price="$100.00"
+          cal="150 Cal."
+          imageURL="/food.jpg"
+        />
+        <ItemOverview
+          itemName="Item name here!"
+          desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."
+          price="$100.00"
+          cal="150 Cal."
+          imageURL="/food.jpg"
+        />
+        <ItemOverview
+          itemName="Item name here!"
+          desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."
+          price="$100.00"
+          cal="150 Cal."
+          imageURL="/food.jpg"
+        />
+        <ItemOverview
+          itemName="Item name here!"
+          desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."
+          price="$100.00"
+          cal="150 Cal."
+          imageURL="/food.jpg"
+        />
+        <ItemOverview
+          itemName="Item name here!"
+          desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."
+          price="$100.00"
+          cal="150 Cal."
+          imageURL="/food.jpg"
+        />
       </div>
     </div>
   );

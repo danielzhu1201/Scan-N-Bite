@@ -2,26 +2,36 @@ import React from "react";
 
 import modules from "./styles/ItemOverview.module.css";
 
-export default function ItemOverview() {
-  const itemName = "Item name here!";
-  const desc = "Description goes here. If too long, truncatruncatrunca....";
-  const price = "$100.00";
-  const cal = "150 Cal.";
-  const imgURL = "/food.jpg";
+interface ItemOverviewProps {
+  itemName: string;
+  desc: string;
+  price: string;
+  cal: string;
+  imageURL: string;
+}
 
+const ItemOverview: React.FC<ItemOverviewProps> = ({
+  itemName,
+  desc,
+  price,
+  cal,
+  imageURL,
+}) => {
   return (
     <div className={modules.Container}>
       <div className={modules.TextContainer}>
-        <h1 className={modules.Name}>{itemName}</h1>
+        <div className={modules.Name}>{itemName}</div>
         <div className={modules.Description}>{desc}</div>
         <div className={modules.PriceCal}>{`${price} · ${cal}`}</div>
       </div>
       <div className={modules.ImageContainer}>
         <img
-          src={process.env.PUBLIC_URL + imgURL}
+          src={process.env.PUBLIC_URL + imageURL}
           className={modules.ItemPic}
         />
       </div>
     </div>
   );
-}
+};
+
+export default ItemOverview;

@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 
-import modules from './styles/InfoDescription.module.css'
+import modules from "./styles/InfoDescription.module.css";
 
+interface InfoDescriptionProps {
+  title: string;
+  content: string;
+}
 
-const InfoDescription: React.FC = () => {
-  const [title, useTitle] = useState('Info Section 1')
-  const [content, useContent] = useState('Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here ')
-
+const InfoDescription: React.FC<InfoDescriptionProps> = ({
+  title,
+  content,
+}) => {
   return (
     <div className={modules.InfoDescription}>
       <h1 className={modules.InfoDescriptionTitle}>{title}</h1>
       <p className={modules.InfoDescriptionContent}>{content}</p>
     </div>
-  )
-}
+  );
+};
 
 export default InfoDescription;

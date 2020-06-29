@@ -8,23 +8,25 @@ import Headline from "../components/Headline";
 
 import modules from "../components/styles/FoodInfo.module.css";
 
+const title = "Info Section";
+const info =
+  "Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here Info here";
+const price = "$5.75";
+
 const FoodInfo: React.FC = () => {
   return (
-    <div className={modules.FoodInfo}>
+    <div className={modules.Container}>
       <div className={modules.FoodInfoHeadline}>
         {/* TODO: need add ArrowBack into headline, and use a props/redux to indicate showing arrowback or not */}
-        <div className={modules.FoodInfoArrowBack}>
-          <ArrowBack />
-        </div>
         <Headline title="Bon Appétit!" imageURL="/Fruits.jpg" />
         <div className={modules.FoodInfoDescriptionWrapper}>
-          <FoodInfoDescription />
-          <FoodInfoDescription />
-          <FoodInfoDescription />
+          <FoodInfoDescription title={title} content={info} />
+          <FoodInfoDescription title={title} content={info} />
+          <FoodInfoDescription title={title} content={info} />
         </div>
       </div>
       <div className={modules.FoodInfoOrderButton}>
-        <OrderButton />
+        <OrderButton price={price} />
       </div>
     </div>
   );
