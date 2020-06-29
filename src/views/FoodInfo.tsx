@@ -2,14 +2,13 @@ import React, { useState } from "react";
 
 // import Headline from '../../components/Headline'
 import ArrowBack from "../components/ArrowBack";
-import FoodInfoDescription from '../components/InfoDescription'
-import OrderButton from '../components/OrderButton'
-import Headline from '../components/Headline'
+import FoodInfoDescription from "../components/InfoDescription";
+import OrderButton from "../components/OrderButton";
+import Headline from "../components/Headline";
 
-import modules from "../components/styles/FoodInfo.module.css"
+import modules from "../components/styles/FoodInfo.module.css";
 
 const FoodInfo: React.FC = () => {
-
   return (
     <div className={modules.FoodInfo}>
       <div className={modules.FoodInfoHeadline}>
@@ -17,7 +16,7 @@ const FoodInfo: React.FC = () => {
         <div className={modules.FoodInfoArrowBack}>
           <ArrowBack />
         </div>
-        <Headline />
+        <Headline title="Bon Appétit!" imageURL="/Fruits.jpg" />
         <div className={modules.FoodInfoDescriptionWrapper}>
           <FoodInfoDescription />
           <FoodInfoDescription />
@@ -28,7 +27,7 @@ const FoodInfo: React.FC = () => {
         <OrderButton />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default FoodInfo;

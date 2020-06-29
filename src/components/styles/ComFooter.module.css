@@ -11,12 +11,13 @@
   bottom: 0px;
 
   /* background: #FAAA13; */
-  background-image: linear-gradient(to left, #FAAA13, #ffc107);
+  background-image: linear-gradient(to left, #faaa13, #ffc107);
   /* box-shadow:inset 0px 15px 5px -13px  #ffffff; */
 }
 
 .FooterLink {
-  text-decoration: none !important;
+  color: inherit;
+  text-decoration: none;
   text-align: center;
 }
 

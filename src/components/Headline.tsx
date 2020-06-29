@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 
-import modules from "./styles/Headline.module.css"
+import Divider from "@material-ui/core/Divider";
 
-// import ArrowBack from '../ArrowBack'
-// const imgURL = '/popeyes.jpg'
-const imgURL = '/Fruits.jpg'
+import modules from "./styles/Headline.module.css";
 
-const Headline: React.FC = () => {
-  const [title, setTitle] = useState('Bon Appétit!');
-  const [imageURL, setImageURL] = useState(imgURL);
+interface HeadlineProps {
+  title: string;
+  imageURL: string;
+}
 
+const Headline: React.FC<HeadlineProps> = ({ title, imageURL }) => {
   return (
     <div className={modules.Headline}>
-      <img className={modules.HeadlineImg} src={process.env.PUBLIC_URL + imageURL} />
+      <img
+        className={modules.HeadlineImg}
+        src={process.env.PUBLIC_URL + imageURL}
+      />
       <div className={modules.HeadlineTitle}>{title}</div>
-      <hr className={modules.HeadlineLine} />
+      <Divider style={{ width: "300px", margin: "10px 0px" }} />
     </div>
-  )
-}
+  );
+};
 
 export default Headline;

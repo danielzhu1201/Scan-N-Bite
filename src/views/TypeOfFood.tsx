@@ -8,7 +8,7 @@ function TypeOfFood() {
   return (
     <div>
       <ArrowBack />
-      <MenuItems />
+      {/* <MenuItems /> */}
     </div>
   );
 }
