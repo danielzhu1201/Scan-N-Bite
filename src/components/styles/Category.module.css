@@ -8,11 +8,10 @@
 
 .FoodCategory {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
 
-  width: 85%;
+  width: 100%;
   max-width: 400px;
 }
