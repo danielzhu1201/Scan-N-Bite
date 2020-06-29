@@ -12,18 +12,15 @@ import Home from "./Home";
 import MenuCategory from "./views/Category";
 import FoodInfo from "./views/FoodInfo";
 
-//http://localhost:3000/menu/specific
-
 export default function Viewport() {
   return (
     <div>
       <Router>
         <ComHeader />
         <Switch>
-          <Route exact path="/" component={App} />
+          <Route exact path="/" component={MenuCategory} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/home" component={Home} />
-          <Route exact path="/menu" component={MenuCategory} />
           <Route exact path="/specific" component={TypyOfFood} />
           <Route exact path="/food" component={FoodInfo} />
           <Route exact path="/check" component={Check} />
