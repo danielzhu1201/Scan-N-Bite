@@ -18,7 +18,7 @@ export default function Viewport() {
     <div style={{ width: "100%", height: "100%" }}>
       <Router>
         <ComHeader />
-        <div style={{ marginBottom: '60px'}}>
+        <div style={{ marginTop:'50px',marginBottom: '60px'}}>
           <Switch>
             <Route exact path="/" component={MenuCategory} />
             <Route exact path="/login" component={App} />

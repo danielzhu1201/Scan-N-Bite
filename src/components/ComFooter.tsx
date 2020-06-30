@@ -1,8 +1,8 @@
 import React, { Component, useState } from "react";
 import { NavLink } from "react-router-dom";
-import RestaurantIcon from "@material-ui/icons/Restaurant";
+import RestaurantOutlinedIcon from '@material-ui/icons/RestaurantOutlined';
 import LocalBarOutlinedIcon from '@material-ui/icons/LocalBarOutlined';
-import ReceiptIcon from "@material-ui/icons/Receipt";
+import ReceiptOutlinedIcon from '@material-ui/icons/ReceiptOutlined';
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -21,7 +21,7 @@ export default function ComFooter() {
   return (
     <div className={modules.Footer}>
       <NavLink className={modules.FooterLink} to="/">
-        <RestaurantIcon
+        <RestaurantOutlinedIcon
           classes={{
             root: classes.root,
           }}
@@ -37,7 +37,7 @@ export default function ComFooter() {
         <p className={modules.FootText}>Drinks</p>
       </NavLink>
       <NavLink className={modules.FooterLink} to="/check">
-        <ReceiptIcon
+        <ReceiptOutlinedIcon
           classes={{
             root: classes.root,
           }}
