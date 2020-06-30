@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import firebaseApp from "./config/firebase";
-import Login from "./Login";
+import Login from "./views/Login";
 import Home from "./Home";
 import Viewport from "./Viewport";
 import { Redirect } from "react-router";

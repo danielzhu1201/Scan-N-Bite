@@ -2,7 +2,7 @@ import React from "react";
 
 import logo from "../logo.svg";
 import CheckItem from "./CheckItems";
-import CheckOutButtion from "./CheckoutButton"
+import CheckOutButtion from "./YellowButton"
 
 import modules from "./styles/CheckBody.module.css";
 
@@ -19,7 +19,7 @@ export default class CheckBody extends React.Component {
                         <CheckItem />
                         <CheckItem />
                         <CheckItem />
-                        <CheckOutButtion />
+                        <CheckOutButtion label='Check Out'/>
                     </div>
                 </div>
             </div>

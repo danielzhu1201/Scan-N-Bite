@@ -7,7 +7,7 @@ import TypyOfFood from "./views/TypeOfFood";
 import Check from "./views/Check";
 import ComHeader from "./components/ComHeader";
 import ComFooter from "./components/ComFooter";
-import Login from "./Login";
+import Login from "./views/Login";
 import Home from "./Home";
 import MenuCategory from "./views/Category";
 import FoodInfo from "./views/FoodInfo";

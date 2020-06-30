@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import firebaseApp from './config/firebase'; 
+import firebaseApp from '../config/firebase'; 
 import 'firebase/auth';
-import uiConfig from './config/uiConfig'; 
+import uiConfig from '../config/uiConfig'; 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import TextField from '@material-ui/core/TextField';
+
+import modules from '../components/styles/Login.module.css'
 
 class Login extends Component<any, any> {
     constructor(props: any) {
@@ -13,7 +16,8 @@ class Login extends Component<any, any> {
         this.state = {
             email: '',
             password: '',
-            fireErrors: ''
+            fireErrors: '',
+            imageURL: '/Fruits.jpg',
         }
     }
 
@@ -46,12 +50,23 @@ class Login extends Component<any, any> {
         return(
             <div>
                 {errorNotification}
+                <div>
+                    <img
+                        className={modules.loginImg}
+                        src={process.env.PUBLIC_URL + this.state.imageURL}
+                        />
+                    <p className={modules.loginTitle}><span>Sign In for a Mobile</span><span>Dining Experience!</span></p>
+                </div>
                 <form>
-                    <label>Email Address</label>
-                    <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="txtEmail" placeholder="Enter Email"></input>
-                    <label>Password</label>
-                    <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="txtPassword" placeholder="Password"></input>
-
+                    <div>
+                        <input className={modules.loginInputEmail} value={this.state.email} onChange={this.handleChange} type="email" name="email" id="txtEmail" placeholder="Email"></input>
+                    </div>
+                    <div>
+                        <input className={modules.loginInputPassword} value={this.state.password} onChange={this.handleChange} type="password" name="password" id="txtPassword" placeholder="Password"></input>
+                    </div>
+                    <div>
+                        <p className={modules.loginNote}>We will sign up for you if you’re a first-time user!</p>
+                    </div>
                     <button type="submit" onClick={this.login}>Login</button>
                     <button onClick={this.signup}>Signup</button>
                     <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseApp.auth()}/>
