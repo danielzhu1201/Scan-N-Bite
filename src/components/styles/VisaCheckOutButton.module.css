@@ -1,0 +1,26 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    width: 230px;
+    margin: 10px;
+  }
+  
+  .button {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: #fdbb0a;
+    border: 0;
+    width: 100%;
+  
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 38px;
+    padding: 0px;
+  }
+
+
+  

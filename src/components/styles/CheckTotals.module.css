@@ -1,0 +1,62 @@
+.checkStub {
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+}
+
+.Totals {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.checkTotal {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 30px;
+    
+    color: #000000;
+}
+
+.checkAmount{
+    font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  vertical-align: top;
+  line-height: 30px;
+  text-align: right;
+  top: 0px;
+  color: #c12929;
+}
+
+.tipButtons {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px 5px 5px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 33%;
+    margin: 0px 10px 10px 0px;
+}
+
+.button {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    width: 80%;
+
+}
+
+.button:hover {
+        background-color: #fdbb0a;
+}
