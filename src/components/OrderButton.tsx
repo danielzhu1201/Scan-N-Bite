@@ -5,9 +5,6 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import Button from "@material-ui/core/Button";
 
 import modules from "./styles/OrderButton.module.css";
-import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-import './styles/ReactToastify.css';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -31,22 +28,12 @@ interface OrderButtonProps {
   price: string;
 }
 
-
 const OrderButton: React.FC<OrderButtonProps> = ({ price }) => {
   const classes = useStyles();
-  const notify = () => toast.success('🦄 Added!', {
-    position: "bottom-center",
-    autoClose: 2000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
+
   return (
     <div className={modules.OrderButton}>
       <Button
-        onClick={notify}
         variant="contained"
         color="primary"
         startIcon={<ShoppingCartOutlinedIcon />}
@@ -57,17 +44,6 @@ const OrderButton: React.FC<OrderButtonProps> = ({ price }) => {
       >
         {price}
       </Button>
-      <ToastContainer
-        position="top-left"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
     </div>
   );
 };
