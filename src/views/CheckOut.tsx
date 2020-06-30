@@ -5,7 +5,10 @@ import VisaCheckOutButtion from "../components/VisaCheckOutButton";
 import CreditCardButton from "../components/CreditCardButton";
 import CashButton from "../components/cashButton";
 import CheckTotal from "../components/CheckTotals";
+import logo from "../logo.svg";
+
 import modules from "../components/styles/CheckOut.module.css";
+
 
 function CheckOut() {
   return (
