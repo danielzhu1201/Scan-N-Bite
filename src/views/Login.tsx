@@ -3,7 +3,7 @@ import firebaseApp from '../config/firebase';
 import 'firebase/auth';
 import uiConfig from '../config/uiConfig'; 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import TextField from '@material-ui/core/TextField';
+import Divider from "@material-ui/core/Divider";
 
 import modules from '../components/styles/Login.module.css'
 
@@ -49,31 +49,46 @@ class Login extends Component<any, any> {
 
         return(
             <div>
-                {errorNotification}
-                <div>
-                    <img
-                        className={modules.loginImg}
-                        src={process.env.PUBLIC_URL + this.state.imageURL}
-                        />
-                    <p className={modules.loginTitle}><span>Sign In for a Mobile</span><span>Dining Experience!</span></p>
+                <div className={modules.containers}>
+                    <div>{errorNotification}</div>
+                    <div className={modules.loginHeadline}>
+                        <img
+                            
+                            src={process.env.PUBLIC_URL + this.state.imageURL}
+                            />
+                        <p className={modules.loginTitle}><span>Sign In for a Mobile</span><span>Dining Experience!</span></p>
+                    </div>
+                    <form>
+                        <div>
+                            <input className={modules.loginInputEmail} value={this.state.email} onChange={this.handleChange} type="email" name="email" id="txtEmail" placeholder="Email"></input>
+                        </div>
+                        <div>
+                            <input className={modules.loginInputPassword} value={this.state.password} onChange={this.handleChange} type="password" name="password" id="txtPassword" placeholder="Password"></input>
+                        </div>
+                        <div>
+                            <p className={modules.loginNote}>We will sign up for you if you’re a first-time user!</p>
+                        </div>
+                        <div >
+                            <button className={modules.loginSignIn} type="submit" onClick={this.login}>
+                                <p>Sign In</p>
+                            </button>
+                        </div>
+                        <div className={modules.loginLineBreak}>
+                            <div className={modules.loginLineBreakLeft}>
+                                <Divider style={{ width: "120px", margin: "10px 0px" }} />
+                            </div>
+                            <p>OR</p>
+                            <div className={modules.loginLineBreakRight}>
+                                <Divider style={{ width: "120px", margin: "10px 0px" }} />
+                            </div>
+                        </div>
+                        
+                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseApp.auth()}/>
+                    </form>
                 </div>
-                <form>
-                    <div>
-                        <input className={modules.loginInputEmail} value={this.state.email} onChange={this.handleChange} type="email" name="email" id="txtEmail" placeholder="Email"></input>
-                    </div>
-                    <div>
-                        <input className={modules.loginInputPassword} value={this.state.password} onChange={this.handleChange} type="password" name="password" id="txtPassword" placeholder="Password"></input>
-                    </div>
-                    <div>
-                        <p className={modules.loginNote}>We will sign up for you if you’re a first-time user!</p>
-                    </div>
-                    <button type="submit" onClick={this.login}>Login</button>
-                    <button onClick={this.signup}>Signup</button>
-                    <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseApp.auth()}/>
-                </form>
             </div>
         ); 
     }
 }
 
-export default Login; 
+export default Login;

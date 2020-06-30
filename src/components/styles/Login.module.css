@@ -1,4 +1,10 @@
-.loginImg {
+.containers {
+  margin-top: 40px;
+  margin-bottom: 80px;
+
+}
+
+.loginHeadline img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -21,6 +27,9 @@
   line-height: 33px;
   text-align: center;
 
+  margin-top: 10px;
+  margin-bottom: 20px;
+
   color: #000000;
 }
 
@@ -31,7 +40,6 @@
 .loginInputEmail {
   width: 300px;
   height: 45px;
-
 
   border: 1px solid #DCDCDC;
   border-radius: 2px;
@@ -67,4 +75,54 @@
   text-align: center;
 
   color: rgba(0, 0, 0, 0.54);
+}
+
+.loginSignIn {
+  height: 50px;
+  width: 270px;
+
+  border: none;
+
+  background: #FDBB0A;
+}
+
+.loginSignIn p {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+
+  color: #000000;
+}
+
+.loginLineBreak {
+  width: 280px;
+  margin: 20px auto 20px auto;
+}
+
+.loginLineBreak p {
+  display: inline;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+
+  color: #979797;
+
+}
+
+.loginLineBreakLeft {
+  float: left;
+  display: inline;
+}
+
+.loginLineBreakRight {
+  float: right;
+  display: inline;
 }

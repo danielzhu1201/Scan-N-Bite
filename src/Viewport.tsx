@@ -20,7 +20,7 @@ export default function Viewport() {
         <ComHeader />
         <Switch>
           <Route exact path="/" component={MenuCategory} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" component={App} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/specific" component={TypyOfFood} />
           <Route exact path="/food" component={FoodInfo} />

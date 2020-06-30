@@ -69,7 +69,7 @@ class App extends Component<any, any> {
       <div
         className="App"
         style={{
-          margin: "100px 0px",
+          margin: "0px 0px",
         }}
       >
         {/* <header className="App-header">

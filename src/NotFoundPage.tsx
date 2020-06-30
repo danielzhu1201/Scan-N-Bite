@@ -17,7 +17,3 @@ function NotFoundPage() {
 }
 
 export default NotFoundPage;
-<<<<<<< HEAD
-
-=======
->>>>>>> master
