@@ -7,5 +7,15 @@
   font-size: 16px;
   padding: 12px 24px;
   border: none;
+  outline: none;
   z-index: 1;
+}
+
+.TopArrow :focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.TopArrow :hover {
+  cursor: pointer;
 }

@@ -1,7 +1,8 @@
-.FoodInfo {
-  margin-top: 50px;
+.Container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 15px 0px 15px;
 }
-
 
 .FoodInfoArrowBack {
   position: absolute;
@@ -10,10 +11,9 @@
 }
 
 .FoodInfoDescriptionWrapper {
-  padding-bottom: 90px;
+  padding-bottom: 110px;
 }
 
 .FoodInfoOrderButton {
   bottom: 80px;
-
 }
