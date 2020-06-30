@@ -48,9 +48,9 @@ class DishInfo extends Component<any, any>{
                             .map(dish => {
                                 return(
                                     <div className={modules.FoodInfoDescriptionWrapper}>
-                                        <FoodInfoDescription title={dish.name} content={dish.description} />
-                                        <FoodInfoDescription title={dish.name} content={dish.calories} />
-                                        <FoodInfoDescription title={dish.name} content={dish.quantity} />
+                                        <FoodInfoDescription title={"Description"} content={dish.description} />
+                                        <FoodInfoDescription title={"Calories"} content={dish.calories} />
+                                        <FoodInfoDescription title={"Quantity"} content={dish.quantity} />
 
                                         {/* <p>Dish Name: {dish.name}</p>
                                         <p>Dish Description: {dish.description}</p>
