@@ -35,7 +35,7 @@ const Profile: React.FC = () => {
                 classes={{
                   root: classes.root,
                 }}
-              />
+              />{' '}
             My Profile
             <NavigateNextOutlinedIcon />
             </p>
@@ -47,8 +47,8 @@ const Profile: React.FC = () => {
                 classes={{
                   root: classes.root,
                 }}
-              />
-              Dining History <NavigateNextOutlinedIcon />
+              />{' '}
+              Dining History<NavigateNextOutlinedIcon />
             </p>
           </NavLink>
 
@@ -58,7 +58,7 @@ const Profile: React.FC = () => {
                 classes={{
                   root: classes.root,
                 }}
-              />
+              /> {' '}
             About Me
                 <NavigateNextOutlinedIcon />
             </p>
