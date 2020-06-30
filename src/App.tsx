@@ -68,9 +68,6 @@ class App extends Component<any, any> {
     return (
       <div
         className="App"
-        style={{
-          margin: "0px 0px",
-        }}
       >
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
