@@ -1,0 +1,55 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 15px 0px 15px;
+}
+
+.wrapper {
+  /* float: left;
+  display: inline; */
+  height: 70px;
+  width: 100%;
+}
+
+.ProfileIcon {
+  float: left;
+  display: inline;
+  height: 60px;
+  width: 50px;
+
+  text-decoration: none !important;
+}
+
+.ProfileText {
+  float: left;
+  display: inline;
+  height: 60px;
+  width: 180px;
+
+}
+
+.ProfileTexttext {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 10px;
+  
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #000000;
+}
+
+.ProfileArrow {
+  float: right;
+  display: inline;
+  height: 60px;
+  width: 60px;
+
+}
+
+/* .ProfileArrowIcon {
+  padding-top: 12px;
+} */
