@@ -1,6 +1,14 @@
 import React, {Component} from 'react'; 
 import firebaseApp from '../../config/firebase'
 
+// import Headline from '../../components/Headline'
+import ArrowBack from "../ArrowBack";
+import FoodInfoDescription from "../InfoDescription";
+import OrderButton from "../OrderButton";
+import Headline from "../Headline";
+
+import modules from "../styles/FoodInfo.module.css";
+
 const db = firebaseApp.firestore(); 
 
 class DishInfo extends Component<any, any>{
@@ -31,39 +39,34 @@ class DishInfo extends Component<any, any>{
         const dishName = 'Lime Rita'
         
         return (
-            <div>
-                <h1>Dishes Page</h1>
-                {/* {
-                    this.state.dishes &&
-                    this.state.dishes?.map(dish => {
-                        return(
-                            <div>
-                                <p>Dish Name: {dish.name}</p>
-                                <p>Dish Description: {dish.description}</p>
-                                <p>Dish Calories: {dish.calories}</p>
-                                <p>Dish Quantity: {dish.quantity}</p>
-                                <p>Dish Price: {dish.price}</p>
-                                <p> ----------------------- </p>
-                            </div>
-                        )
-                    })
-                } */}
+            <div className={modules.Container}>
+                <div className={modules.FoodInfoHeadline}>
+                    <Headline title={dishName} imageURL="/Fruits.jpg" />
+                        {
+                            this.state.dishes &&
+                            this.state.dishes?.filter(dish => dish.name === dishName)
+                            .map(dish => {
+                                return(
+                                    <div className={modules.FoodInfoDescriptionWrapper}>
+                                        <FoodInfoDescription title={dish.name} content={dish.description} />
+                                        <FoodInfoDescription title={dish.name} content={dish.calories} />
+                                        <FoodInfoDescription title={dish.name} content={dish.quantity} />
 
-                {
-                    this.state.dishes &&
-                    this.state.dishes?.filter(dish => dish.name === dishName)
-                    .map(dish => {
-                        return(
-                            <div>
-                                <p>Dish Name: {dish.name}</p>
-                                <p>Dish Description: {dish.description}</p>
-                                <p>Dish Calories: {dish.calories}</p>
-                                <p>Dish Quantity: {dish.quantity}</p>
-                                <p>Dish Price: {dish.price}</p>
-                            </div>
-                        )
-                    })
-                }
+                                        {/* <p>Dish Name: {dish.name}</p>
+                                        <p>Dish Description: {dish.description}</p>
+                                        <p>Dish Calories: {dish.calories}</p>
+                                        <p>Dish Quantity: {dish.quantity}</p> */}
+
+                                        <div className={modules.FoodInfoOrderButton}>
+                                        <OrderButton price={dish.price} />
+                                        </div>
+                                    </div>
+                                )
+                            })
+
+                            
+                        }
+                </div>
             </div>
         )
     }
