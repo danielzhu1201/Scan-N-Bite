@@ -1,0 +1,33 @@
+.Footer {
+  position: fixed;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 50px;
+  left: 0px;
+  bottom: 0px;
+  /* background: #FAAA13; */
+  background-image: linear-gradient(to left, #faaa13, #ffc107);
+  /* box-shadow:inset 0px 15px 5px -13px  #ffffff; */
+  z-index: 100;
+}
+
+.FooterLink {
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+}
+
+.FootText {
+  margin-top: -4px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: rgba(0, 0, 0, 0.54);
+}

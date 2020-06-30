@@ -1,0 +1,32 @@
+.InfoDescription {
+  width: 100%;
+}
+
+.InfoDescriptionTitle {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+
+  color: #000000;
+
+  padding-left: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.InfoDescriptionContent {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+
+  color: #000000;
+
+  padding-left: 30px;
+  margin: 0;
+  margin-bottom: 15px;
+}
