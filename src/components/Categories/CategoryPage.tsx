@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import firebaseApp from '../../config/firebase';
 import FoodCategory from '../FoodCategory'; 
 import Headline from "../Headline";
-import modules from "../components/styles/Category.module.css";
+import modules from "../styles/Category.module.css";
 
 const db = firebaseApp.firestore(); 
 
@@ -33,10 +33,11 @@ class CategoryPage extends Component<any, any>{
 
     render() {
         return (
-            <div>
+            <div className={modules.Container}>
                 <div>
                 <Headline title="Bon Appétit!" imageURL="/Fruits.jpg" />
                 </div>
+                <div className={modules.FoodCategory} >
                 {
                     this.state.categories &&
                     this.state.categories?.map(category => {
@@ -48,6 +49,7 @@ class CategoryPage extends Component<any, any>{
                         )
                     })
                 }
+                </div>
             </div>
         )
     }
