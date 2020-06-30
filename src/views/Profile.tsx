@@ -19,8 +19,16 @@ const useStyles = makeStyles({
     color: "grey",
     fontSize: "40px",
     textDecoration: "none",
+    paddingTop: '5px'
   },
+  arrowRoot: {
+    color: "grey",
+    fontSize: "45px",
+    textDecoration: "none",
+    paddingTop: '5px'
+  }
 });
+
 
 const Profile: React.FC = () => {
   const classes = useStyles();
@@ -28,40 +36,67 @@ const Profile: React.FC = () => {
     <div className={modules.Container}>
       <div>
         <Headline title="User Name Here!" imageURL="/Fruits.jpg" />
-        <div>
+        <div className={modules.wrapper}>
           <NavLink style={{ textDecoration: 'none' }} to="/">
-            <p className={modules.ProfileText}>
+            <div className={modules.ProfileIcon}>
               <AccessibilityNewOutlinedIcon
                 classes={{
                   root: classes.root,
                 }}
-              />{' '}
-            My Profile
-            <NavigateNextOutlinedIcon />
-            </p>
+              />
+            </div>
+            <div className={modules.ProfileText}>
+              <p className={modules.ProfileTexttext}>My Profile</p>
+            </div>
+            <div className={modules.ProfileArrow}>
+              <NavigateNextOutlinedIcon
+                classes={{
+                  root: classes.arrowRoot,
+                }}
+              />
+            </div>
           </NavLink>
-
+        </div>
+        <div className={modules.wrapper}>
           <NavLink style={{ textDecoration: 'none' }} to="/">
-            <p className={modules.ProfileText}>
+            <div className={modules.ProfileIcon}>
               <RestoreOutlinedIcon
                 classes={{
                   root: classes.root,
                 }}
-              />{' '}
-              Dining History<NavigateNextOutlinedIcon />
-            </p>
+              />
+            </div>
+            <div className={modules.ProfileText}>
+              <p className={modules.ProfileTexttext}>Dining History</p>
+            </div>
+            <div className={modules.ProfileArrow}>
+              <NavigateNextOutlinedIcon
+                classes={{
+                  root: classes.arrowRoot,
+                }}
+              />
+            </div>
           </NavLink>
-
+        </div>
+        <div className={modules.wrapper}>
           <NavLink style={{ textDecoration: 'none' }} to="/">
-            <p className={modules.ProfileText}>
+            <div className={modules.ProfileIcon}>
               <PublicOutlinedIcon
                 classes={{
                   root: classes.root,
                 }}
-              /> {' '}
-            About Me
-                <NavigateNextOutlinedIcon />
-            </p>
+              />
+            </div>
+            <div className={modules.ProfileText}>
+              <p className={modules.ProfileTexttext}>About Me</p>
+            </div>
+            <div className={modules.ProfileArrow}>
+              <NavigateNextOutlinedIcon
+                classes={{
+                  root: classes.arrowRoot,
+                }}
+              />
+            </div>
           </NavLink>
 
         </div>
