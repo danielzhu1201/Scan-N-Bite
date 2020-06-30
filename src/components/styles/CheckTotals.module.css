@@ -1,13 +1,15 @@
 .checkStub {
     display: flex;
     flex-direction: column;
-    width: 88%;
+    width: 100%;
 }
 
 .Totals {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 88%;
+    margin-left: 25px;
 }
 
 .checkTotal {
@@ -32,17 +34,47 @@
   color: #c12929;
 }
 
+.tipInput {
+    display: flex;
+    justify-content: flex-end;
+
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    vertical-align: top;
+    text-align: right;
+    top: 0px;
+    color: #c12929;
+}
+
+.Tip {
+    border: 0px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    vertical-align: top;
+    text-align: right;
+    top: 0px;
+    color: #c12929;
+    width: 27.6%;
+    border-bottom: 2px solid #c12929;
+    margin: 0px;
+}
+
 .tipButtons {
     display: flex;
     flex-direction: row;
-    margin: 10px 10px 5px 5px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .container {
     display: flex;
-    align-items: center;
-    width: 33%;
-    margin: 0px 10px 10px 0px;
+    align-content: center;
+    width: 100%;
 }
 
 .button {
@@ -53,8 +85,9 @@
     line-height: 22px;
     text-align: center;
     color: #000000;
-    width: 80%;
-
+    width: 40%;
+    margin: 10px;
+    border-radius: 15px;
 }
 
 .button:hover {

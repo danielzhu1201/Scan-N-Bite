@@ -11,10 +11,10 @@ export default function WaitPopup() {
             <div className={modules.modalClose}>
                 <img src={logo} className={modules.exit} alt="TypePic"/>
             </div>
-            <div className={modules.ModalPic}>
+            <div className={modules.inputBoxes}>
                 <img src={logo} className={modules.Pic} alt="TypePic"/>
             </div>
-            <div className={modules.modalText}>
+            <div className={modules.modalCheckout}>
                 Someone will be with you shortly for checkout!
             </div>
         </div>
