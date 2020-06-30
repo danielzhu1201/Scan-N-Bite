@@ -28,8 +28,8 @@ const Profile: React.FC = () => {
     <div className={modules.Container}>
       <div>
         <Headline title="User Name Here!" imageURL="/Fruits.jpg" />
-        <div className={modules.ProfileWrapper}>
-          <NavLink to="/">
+        <div>
+          <NavLink style={{ textDecoration: 'none' }} to="/">
             <p className={modules.ProfileText}>
               <AccessibilityNewOutlinedIcon
                 classes={{
@@ -40,18 +40,20 @@ const Profile: React.FC = () => {
             <NavigateNextOutlinedIcon />
             </p>
           </NavLink>
-          <NavLink to="/specific">
-            <RestoreOutlinedIcon
-              classes={{
-                root: classes.root,
-              }}
-            />
+
+          <NavLink style={{ textDecoration: 'none' }} to="/">
             <p className={modules.ProfileText}>
-              Dining History
+              <RestoreOutlinedIcon
+                classes={{
+                  root: classes.root,
+                }}
+              />
+              Dining History <NavigateNextOutlinedIcon />
             </p>
           </NavLink>
-          <NavLink to="/check">
-            <p>
+
+          <NavLink style={{ textDecoration: 'none' }} to="/">
+            <p className={modules.ProfileText}>
               <PublicOutlinedIcon
                 classes={{
                   root: classes.root,
@@ -61,6 +63,7 @@ const Profile: React.FC = () => {
                 <NavigateNextOutlinedIcon />
             </p>
           </NavLink>
+
         </div>
       </div>
       <div>
