@@ -11,17 +11,27 @@ import Login from "./Login";
 import Home from "./Home";
 import MenuCategory from "./views/Category";
 import FoodInfo from "./views/FoodInfo";
+import Profile from "./views/Profile"
 
 import MenuCategoryView from './containers/menu/category';
 
 export default function Viewport() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/menu/category" component={MenuCategoryView} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </Router>
+    <div style={{ width: "100%", height: "100%" }}>
+      <Router>
+        <ComHeader />
+        <Switch>
+          <Route exact path="/" component={MenuCategory} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/specific" component={TypyOfFood} />
+          <Route exact path="/food" component={FoodInfo} />
+          <Route exact path="/check" component={Check} />
+          <Route exact path="/profile" component={Profile} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <ComFooter />
+      </Router>
+    </div>
   );
 }
