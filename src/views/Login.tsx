@@ -5,7 +5,7 @@ import uiConfig from '../config/uiConfig';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import Divider from "@material-ui/core/Divider";
 
-import modules from '../components/styles/Login.module.css'
+import modules from './styles/Login.module.css'
 
 class Login extends Component<any, any> {
     constructor(props: any) {

@@ -11,7 +11,7 @@ import Headline from "../components/Headline";
 import LogOutButton from "../components/LogOutButton";
 import { makeStyles } from "@material-ui/core/styles";
 
-import modules from "../components/styles/Profile.module.css";
+import modules from "./styles/Profile.module.css";
 
 
 const useStyles = makeStyles({

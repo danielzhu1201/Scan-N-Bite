@@ -18,16 +18,18 @@ export default function Viewport() {
     <div style={{ width: "100%", height: "100%" }}>
       <Router>
         <ComHeader />
-        <Switch>
-          <Route exact path="/" component={MenuCategory} />
-          <Route exact path="/login" component={App} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/specific" component={TypyOfFood} />
-          <Route exact path="/food" component={FoodInfo} />
-          <Route exact path="/check" component={Check} />
-          <Route exact path="/profile" component={Profile} />
-          <Route component={NotFoundPage} />
-        </Switch>
+        <div style={{ marginBottom: '60px'}}>
+          <Switch>
+            <Route exact path="/" component={MenuCategory} />
+            <Route exact path="/login" component={App} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/specific" component={TypyOfFood} />
+            <Route exact path="/food" component={FoodInfo} />
+            <Route exact path="/check" component={Check} />
+            <Route exact path="/profile" component={Profile} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </div>
         <ComFooter />
       </Router>
     </div>
