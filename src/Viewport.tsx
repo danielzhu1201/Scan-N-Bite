@@ -13,6 +13,8 @@ import MenuCategory from "./views/Category";
 import FoodInfo from "./views/FoodInfo";
 import Profile from "./views/Profile"
 
+import MenuCategoryView from './containers/menu/category';
+
 export default function Viewport() {
   return (
     <div style={{ width: "100%", height: "100%" }}>
