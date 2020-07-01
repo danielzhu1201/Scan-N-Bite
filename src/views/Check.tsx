@@ -4,9 +4,10 @@ import CheckItem from "../components/CheckItems";
 import CheckOutButtion from "../components/CheckoutButton";
 import logo from "../logo.svg";
 import CheckTotals from "../components/CheckTotals";
-import VisaCheckOutButton from "../components/VisaCheckOutButton";
 import CreditCardButton from "../components/CreditCardButton";
 import CashButton from "../components/cashButton";
+
+import { Helmet } from "react-helmet";
 
 import modules from "../views/styles/CheckBody.module.css";
 
@@ -23,7 +24,6 @@ function Check() {
     checkBalances = <CheckTotals />;
     paymentOptions = (
       <div className={modules.Buttons}>
-        <VisaCheckOutButton />
         <CreditCardButton />
         <CashButton />
       </div>
@@ -47,6 +47,31 @@ function Check() {
         </div>
         {checkBalances}
         {paymentOptions}
+        <Helmet>
+          <script type="text/javascript">
+            {`function onVisaCheckoutReady() {
+              console.log("Visa Checkout ready")
+              V.init({
+                apikey: "PQY61HUOVKXW1E1AITP621_jPkgtZlzt9320UI02Ergl9PF5g",
+                encryptionKey: "W9O4GYP5A4UOXGU2RR4513FZ-EpKghPT6dT1QKiVvNFCzO5Ms",
+                payment: {
+                  cardBrands: ["VISA", "MASTERCARD", "AMEX", "DINERS", "DISCOVER"],
+                },
+                paymentRequest: {
+                  currencyCode: "USD",
+                  subtotal: "20.00",
+                },
+                dataLevel: "NONE",
+              });
+            }`}
+          </script>
+        </Helmet>
+        <img
+          alt="Visa Checkout"
+          className="v-button"
+          role="button"
+          src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"
+        />
       </div>
     </div>
   );
