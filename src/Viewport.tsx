@@ -13,8 +13,6 @@ import MenuCategory from "./views/Category";
 import FoodInfo from "./views/FoodInfo";
 import Profile from "./views/Profile";
 import CategoryPage from "./components/Categories/CategoryPage";
-import DishInfo from "./components/Dishes/DishInfo";
-import DishesInfo from "./components/DishesInfo/DishesInfo";
 
 export default function Viewport() {
   return (
@@ -29,8 +27,6 @@ export default function Viewport() {
           <Route exact path="/food/:type/:id" component={FoodInfo} />
           <Route exact path="/check" component={Check} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/dishinfo" component={DishInfo} />
-          <Route exact path="/dishesinfo" component={DishesInfo} />
           <Route component={NotFoundPage} />
         </Switch>
         <ComFooter />

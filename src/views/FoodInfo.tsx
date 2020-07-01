@@ -5,6 +5,8 @@ import FoodInfoDescription from "../components/InfoDescription";
 import OrderButton from "../components/OrderButton";
 import Headline from "../components/Headline";
 import refs from "../config/dbrefs";
+import { ToastsStore } from "react-toasts";
+import firebaseApp from "../config/firebase";
 
 import modules from "./styles/FoodInfo.module.css";
 class FoodInfo extends Component<any, any> {
@@ -53,7 +55,52 @@ class FoodInfo extends Component<any, any> {
           </div>
         </div>
         <div className={modules.FoodInfoOrderButton}>
-          <OrderButton price={`$${this.state.info.price}`} />
+          <OrderButton
+            price={`$${this.state.info.price}`}
+            onClick={() => {
+              firebaseApp.auth().onAuthStateChanged((user) => {
+                if (user) {
+                  const uid = user.uid!;
+                  const userRef = firebaseApp
+                    .firestore()
+                    .collection("users")
+                    .doc(uid)
+                    .collection("current_order")
+                    .doc(this.props.match.params.id);
+                  userRef.get().then((snapshot) => {
+                    if (!snapshot.exists) {
+                      userRef
+                        .set({
+                          name: this.state.info.name,
+                          price: this.state.info.price,
+                          qty: 1,
+                        })
+                        .then((res) => {
+                          ToastsStore.success("Added to cart");
+                        })
+                        .catch((err) => {
+                          ToastsStore.error("Try again");
+                        });
+                    } else {
+                      const original_qty = snapshot.get("qty");
+                      userRef
+                        .update({
+                          qty: parseInt(original_qty) + 1,
+                        })
+                        .then((res) => {
+                          ToastsStore.success("Added to cart");
+                        })
+                        .catch((err) => {
+                          ToastsStore.error("Try again");
+                        });
+                    }
+                  });
+                } else {
+                  ToastsStore.error("You must login to place an order");
+                }
+              });
+            }}
+          />
         </div>
       </div>
     );

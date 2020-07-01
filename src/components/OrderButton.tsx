@@ -31,15 +31,16 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface OrderButtonProps {
   price: string;
+  onClick: (any) => void;
 }
 
-const OrderButton: React.FC<OrderButtonProps> = ({ price }) => {
+const OrderButton: React.FC<OrderButtonProps> = ({ price, onClick }) => {
   const classes = useStyles();
 
   return (
     <div className={modules.OrderButton}>
       <Button
-        onClick={() => ToastsStore.success("Added Sucessful!")}
+        onClick={onClick}
         variant="contained"
         color="primary"
         startIcon={<ShoppingCartOutlinedIcon />}
