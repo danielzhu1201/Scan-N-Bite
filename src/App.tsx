@@ -50,7 +50,7 @@ class App extends Component<any, any> {
   }
 
   componentDidMount() {
-    this.authListener();
+    //this.authListener();
   }
 
   authListener() {
@@ -66,9 +66,7 @@ class App extends Component<any, any> {
 
   render() {
     return (
-      <div
-        className="App"
-      >
+      <div className="App">
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
