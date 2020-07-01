@@ -35,6 +35,9 @@ class CategoryPage extends Component<any, any>{
 
                 innerRef.get().then(querySnapshot => {
                     querySnapshot.forEach(doc => {
+                        const data = doc.data()
+                        dishes.push(data)
+                        
                         console.log(doc.id, " => ", doc.data());
                     });
                 })
@@ -42,13 +45,11 @@ class CategoryPage extends Component<any, any>{
                     console.log("Error getting documents: ", error);
                 });
             })
-            this.setState({categories: categories}); 
+            this.setState({categories: categories, dishes : dishes}); 
             console.log(categories); 
 
         })
         .catch(error => console.log(error));
-
-            
     }
 
     render() {
