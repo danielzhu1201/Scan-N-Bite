@@ -19,25 +19,22 @@ class DishInfo extends Component<any, any> {
     };
   }
 
-  componentDidMount() {
-    db.collection("menu")
-      .doc("smy7J1V4liwCklUdtncK")
-      .collection("category")
-      .doc("WAZAfnCeu8q6cbM9vA9L")
-      .collection("items")
-      .get()
-      .then((snapshot) => {
-        // console.log(snapshot);
-        const dishes = Array();
-        snapshot.forEach((doc) => {
-          const data = doc.data();
-          dishes.push(data);
-        });
-        this.setState({ dishes: dishes });
-        // console.log(dishes);
-      })
-      .catch((error) => console.log(error));
-  }
+    componentDidMount() {
+        db.collection('menu').doc('smy7J1V4liwCklUdtncK').collection('category').doc('WAZAfnCeu8q6cbM9vA9L').collection('items')
+            .get()
+            .then(snapshot => {
+                // console.log(snapshot);
+                const dishes = Array()
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    dishes.push(data); 
+                    console.log(dishes);
+                })
+                this.setState({dishes: dishes}); 
+                // console.log(dishes); 
+            })
+            .catch(error => console.log(error)); 
+    }
 
   render() {
     const dishName = "Lime Rita";
