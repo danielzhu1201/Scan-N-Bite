@@ -22,14 +22,13 @@ export default function Viewport() {
       <Router>
         <ComHeader />
         <Switch>
-          <Route exact path="/" component={MenuCategory} />
+          <Route exact path="/" component={CategoryPage} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/specific" component={TypyOfFood} />
           <Route exact path="/food" component={FoodInfo} />
           <Route exact path="/check" component={Check} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/category" component={CategoryPage} />
           <Route exact path="/dishinfo" component={DishInfo} />
           <Route exact path="/dishesinfo" component={DishesInfo} />
           <Route component={NotFoundPage} />
