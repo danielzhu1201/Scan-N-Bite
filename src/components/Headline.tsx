@@ -12,10 +12,7 @@ interface HeadlineProps {
 const Headline: React.FC<HeadlineProps> = ({ title, imageURL }) => {
   return (
     <div className={modules.Headline}>
-      <img
-        className={modules.HeadlineImg}
-        src={process.env.PUBLIC_URL + imageURL}
-      />
+      <img className={modules.HeadlineImg} src={imageURL} />
       <div className={modules.HeadlineTitle}>{title}</div>
       <Divider style={{ width: "300px", margin: "10px 0px" }} />
     </div>

@@ -25,10 +25,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
         <div className={modules.PriceCal}>{`${price} · ${cal}`}</div>
       </div>
       <div className={modules.ImageContainer}>
-        <img
-          src={process.env.PUBLIC_URL + imageURL}
-          className={modules.ItemPic}
-        />
+        <img src={imageURL} className={modules.ItemPic} />
       </div>
     </div>
   );

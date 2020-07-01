@@ -2,45 +2,12 @@ import React, { Component, useEffect, useState } from "react";
 import ItemOverview from "../components/ItemOverview";
 import { withRouter } from "react-router-dom";
 import firebaseApp from "../config/firebase";
-
+import { NavLink } from "react-router-dom";
 import modules from "./styles/TypeOfFood.module.css";
 import { render } from "@testing-library/react";
+import refs from "../config/dbrefs";
 
 const imgURL = "/Fruits.jpg";
-const db = firebaseApp.firestore();
-
-const refs = {
-  drinks: db
-    .collection("menu")
-    .doc("smy7J1V4liwCklUdtncK")
-    .collection("category")
-    .doc("WAZAfnCeu8q6cbM9vA9L")
-    .collection("items"),
-  desserts: db
-    .collection("menu")
-    .doc("smy7J1V4liwCklUdtncK")
-    .collection("category")
-    .doc("Yjk8qVTRIrfYCKL2YP7O")
-    .collection("items"),
-  sides: db
-    .collection("menu")
-    .doc("smy7J1V4liwCklUdtncK")
-    .collection("category")
-    .doc("ZMhZzktzxR7YphkEd1sG")
-    .collection("items"),
-  appetizers: db
-    .collection("menu")
-    .doc("smy7J1V4liwCklUdtncK")
-    .collection("category")
-    .doc("eJJ7b01T6W3MD5OLdzLI")
-    .collection("items"),
-  entrees: db
-    .collection("menu")
-    .doc("smy7J1V4liwCklUdtncK")
-    .collection("category")
-    .doc("lip1YumvzOTqcuHofR90")
-    .collection("items"),
-};
 
 class TypeOfFood extends Component<any, any> {
   constructor(props: any) {
@@ -57,7 +24,9 @@ class TypeOfFood extends Component<any, any> {
       ref.get().then((snapshot) => {
         const dishes = Array();
         snapshot.forEach((doc) => {
-          const data = doc.data();
+          const id = doc.id;
+          var data = doc.data();
+          data["id"] = id;
           console.log(data);
           dishes.push(data);
         });
@@ -85,19 +54,29 @@ class TypeOfFood extends Component<any, any> {
               desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."
               price="$100.00"
               cal="150 Cal."
-              imageURL="/food.jpg"
+              imageURL={`${process.env.PUBLIC_URL}/food.jpg`}
             />
           )}
           {this.state.dishes &&
             this.state.dishes.map((info, i) => {
               return (
-                <ItemOverview
-                  itemName={info.name}
-                  desc={info.desc}
-                  price={`$${info.price}`}
-                  cal={`${info.calories} Cal.`}
-                  imageURL="/food.jpg"
-                />
+                <NavLink
+                  style={{ textDecoration: "none" }}
+                  key={i}
+                  to={`/food/${this.props.match.params.type}/${info.id}`}
+                >
+                  <ItemOverview
+                    itemName={info.name}
+                    desc={`${
+                      info.description?.slice(0, 40) ||
+                      "More descriptions to come"
+                    }...`}
+                    price={`$${info.price}`}
+                    cal={`${info.calories} Cal.`}
+                    imageURL={`${process.env.PUBLIC_URL}/food.jpg`}
+                    key={i}
+                  />
+                </NavLink>
               );
             })}
         </div>
