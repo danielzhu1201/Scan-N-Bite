@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Divider from "@material-ui/core/Divider";
 
 import modules from "./styles/CheckTotals.module.css";
 
@@ -7,13 +8,13 @@ export default function CheckTotals() {
   const [tipTotal, setTipTotal] = useState(0);
   const [checkTotal, setCheckTotal] = useState(checkSubtotal + tipTotal);
 
-    function updateBill() {
-        setCheckTotal(checkSubtotal + tipTotal)
-        console.log(checkTotal)
-    }
+  function updateBill() {
+    setCheckTotal(checkSubtotal + tipTotal);
+    console.log(checkTotal);
+  }
   return (
     <div className={modules.SubTotal}>
-      <hr className={modules.break} />
+      <Divider style={{ width: "65%" }} />
       <div className={modules.checkStub}>
         <div className={modules.Totals}>
           <div className={modules.checkTotal}>SubTotal</div>

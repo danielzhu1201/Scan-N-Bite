@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import CheckItem from "../components/CheckItems";
 import CheckOutButtion from "../components/CheckoutButton";
 import logo from "../logo.svg";
-
-import modules from "../views/styles/CheckBody.module.css";
 import CheckTotals from "../components/CheckTotals";
 import VisaCheckOutButton from "../components/VisaCheckOutButton";
 import CreditCardButton from "../components/CreditCardButton";
 import CashButton from "../components/cashButton";
+
+import modules from "../views/styles/CheckBody.module.css";
 
 function Check() {
   const [checkOut, setCheckOut] = useState(false);
@@ -17,7 +17,7 @@ function Check() {
     margin: "0px 0px 50px 0px",
   };
 
-  var checkItems, checkBalances, paymentOptions;
+  var checkBalances, paymentOptions;
   if (checkOut) {
     changeMargin.margin = "10px";
     checkBalances = <CheckTotals />;
