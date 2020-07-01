@@ -13,6 +13,7 @@ import modules from "../views/styles/CheckBody.module.css";
 
 function Check() {
   const [checkOut, setCheckOut] = useState(false);
+  const [total, setTotal] = useState(0.0);
 
   var changeMargin = {
     margin: "0px 0px 50px 0px",
@@ -21,7 +22,9 @@ function Check() {
   var checkBalances, paymentOptions;
   if (checkOut) {
     changeMargin.margin = "10px";
-    checkBalances = <CheckTotals />;
+    checkBalances = (
+      <CheckTotals subTotal={100.5} callBack={(val) => setTotal(val)} />
+    );
     paymentOptions = (
       <div className={modules.Buttons}>
         <CreditCardButton />

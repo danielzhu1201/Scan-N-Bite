@@ -3,15 +3,14 @@ import Divider from "@material-ui/core/Divider";
 
 import modules from "./styles/CheckTotals.module.css";
 
-export default function CheckTotals() {
-  const [checkSubtotal, setCheckSubtotal] = useState(100);
-  const [tipTotal, setTipTotal] = useState(0);
-  const [checkTotal, setCheckTotal] = useState(checkSubtotal + tipTotal);
+interface CheckTotalsProps {
+  subTotal: number;
+  callBack: (any) => void;
+}
 
-  function updateBill() {
-    setCheckTotal(checkSubtotal + tipTotal);
-    console.log(checkTotal);
-  }
+const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
+  const [tipTotal, setTipTotal] = useState(0);
+
   return (
     <div className={modules.SubTotal}>
       <Divider style={{ width: "80%" }} />
@@ -19,7 +18,7 @@ export default function CheckTotals() {
         <div className={modules.Totals}>
           <div className={modules.checkTotal}>SubTotal</div>
           <div className={modules.checkAmount} id="subTotal">
-            $ {checkSubtotal}
+            $ {subTotal}
           </div>
         </div>
         <div className={modules.Totals}>
@@ -39,19 +38,34 @@ export default function CheckTotals() {
           <div className={modules.container}>
             <button
               className={modules.button}
-              onClick={(e) => setTipTotal(checkSubtotal * 0.15)}
+              onClick={(e) => {
+                setTipTotal(subTotal * 0.15);
+                callBack(
+                  Number.isNaN(subTotal + tipTotal) ? 0.0 : subTotal + tipTotal
+                );
+              }}
             >
               15%
             </button>
             <button
               className={modules.button}
-              onClick={(e) => setTipTotal(checkSubtotal * 0.2)}
+              onClick={(e) => {
+                setTipTotal(subTotal * 0.2);
+                callBack(
+                  Number.isNaN(subTotal + tipTotal) ? 0.0 : subTotal + tipTotal
+                );
+              }}
             >
               20%
             </button>
             <button
               className={modules.button}
-              onClick={(e) => setTipTotal(checkSubtotal * 0.25)}
+              onClick={(e) => {
+                setTipTotal(subTotal * 0.25);
+                callBack(
+                  Number.isNaN(subTotal + tipTotal) ? 0.0 : subTotal + tipTotal
+                );
+              }}
             >
               25%
             </button>
@@ -60,13 +74,12 @@ export default function CheckTotals() {
         <div className={modules.Totals}>
           <div className={modules.checkTotal}>Total</div>
           <div className={modules.checkAmount}>
-            ${" "}
-            {Number.isNaN(checkSubtotal + tipTotal)
-              ? "..."
-              : checkSubtotal + tipTotal}
+            $ {Number.isNaN(subTotal + tipTotal) ? "..." : subTotal + tipTotal}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default CheckTotals;
