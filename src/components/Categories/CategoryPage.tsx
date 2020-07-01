@@ -69,9 +69,7 @@ class CategoryPage extends Component<any, any> {
   render() {
     return (
       <div className={modules.Container}>
-        <div>
-          <Headline title={this.state.name} imageURL="/Fruits.jpg" />
-        </div>
+        <Headline title={this.state.name} imageURL="/Fruits.jpg" />
         <div className={modules.FoodCategory}>
           {this.state.categories &&
             this.state.categories.map((category, i) => {
