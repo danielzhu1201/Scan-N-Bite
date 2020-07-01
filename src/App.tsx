@@ -3,8 +3,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import firebaseApp from "./config/firebase";
-import Login from "./Login";
+import Login from "./views/Login";
 import Home from "./Home";
+import Viewport from "./Viewport";
+import { Redirect } from "react-router";
+import NotFound from "./NotFoundPage";
 
 // function App() {
 //   return (
@@ -42,17 +45,17 @@ class App extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      user: {},
+      user: null,
     };
   }
 
   componentDidMount() {
-    this.authListener();
+    //this.authListener();
   }
 
   authListener() {
     firebaseApp.auth().onAuthStateChanged((user) => {
-      console.log(user);
+      // console.log(user);
       if (user) {
         this.setState({ user });
       } else {
@@ -63,12 +66,7 @@ class App extends Component<any, any> {
 
   render() {
     return (
-      <div
-        className="App"
-        style={{
-          margin: "100px 0px",
-        }}
-      >
+      <div className="App">
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

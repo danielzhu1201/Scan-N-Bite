@@ -7,15 +7,13 @@ import TypyOfFood from "./views/TypeOfFood";
 import Check from "./views/Check";
 import ComHeader from "./components/ComHeader";
 import ComFooter from "./components/ComFooter";
-import Login from "./Login";
+import Login from "./views/Login";
 import Home from "./Home";
 import MenuCategory from "./views/Category";
 import FoodInfo from "./views/FoodInfo";
-import Profile from "./views/Profile"
-import CategoryPage from './components/Categories/CategoryPage'
-import DishInfo from './components/Dishes/DishInfo'
-
-import MenuCategoryView from './containers/menu/category';
+import Profile from "./views/Profile";
+import CategoryPage from "./components/Categories/CategoryPage";
+import DishInfo from "./components/Dishes/DishInfo";
 
 export default function Viewport() {
   return (
@@ -30,8 +28,8 @@ export default function Viewport() {
           <Route exact path="/food" component={FoodInfo} />
           <Route exact path="/check" component={Check} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/category" component={CategoryPage}/> 
-          <Route exact path="/dishinfo" component={DishInfo}/>
+          <Route exact path="/category" component={CategoryPage} />
+          <Route exact path="/dishinfo" component={DishInfo} />
           <Route component={NotFoundPage} />
         </Switch>
         <ComFooter />
