@@ -6,7 +6,7 @@ import FoodInfoDescription from "../components/InfoDescription";
 import OrderButton from "../components/OrderButton";
 import Headline from "../components/Headline";
 
-import modules from "../components/styles/FoodInfo.module.css";
+import modules from "./styles/FoodInfo.module.css";
 
 const title = "Info Section";
 const info =

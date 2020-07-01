@@ -4,7 +4,7 @@ import CheckItem from "../components/CheckItems";
 import CheckOutButtion from "../components/CheckoutButton";
 import logo from "../logo.svg";
 
-import modules from "../components/styles/CheckBody.module.css";
+import modules from "./styles/CheckBody.module.css";
 
 function Check() {
   return (

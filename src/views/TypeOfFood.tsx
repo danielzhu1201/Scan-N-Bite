@@ -2,7 +2,7 @@ import React from "react";
 
 import ItemOverview from "../components/ItemOverview";
 
-import modules from "../components/styles/TypeOfFood.module.css";
+import modules from "./styles/TypeOfFood.module.css";
 
 const imgURL = "/Fruits.jpg";
 
