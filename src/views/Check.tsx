@@ -4,7 +4,7 @@ import CheckItem from "../components/CheckItems";
 import CheckOutButtion from "../components/CheckoutButton";
 import logo from "../logo.svg";
 
-import modules from "../components/styles/CheckBody.module.css";
+import modules from "../views/styles/CheckBody.module.css";
 import CheckTotals from "../components/CheckTotals";
 import VisaCheckOutButton from "../components/VisaCheckOutButton";
 import CreditCardButton from "../components/CreditCardButton";
