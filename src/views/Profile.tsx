@@ -32,14 +32,14 @@ const useStyles = makeStyles({
 const Profile: React.FC = () => {
   const classes = useStyles();
   const [user, setUser] = useState(false);
+  const [userName, setUserName] = useState("UserName Here");
 
   const authListener = () => {
     firebaseApp.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(user);
+        setUserName(user.displayName!);
         setUser(true);
       } else {
-        console.log("no user");
         setUser(false);
       }
     });
@@ -54,28 +54,7 @@ const Profile: React.FC = () => {
       {user ? (
         <div className={modules.Container}>
           <div>
-            <Headline title="User Name Here!" imageURL="/Fruits.jpg" />
-            <div className={modules.wrapper}>
-              <NavLink style={{ textDecoration: "none" }} to="/">
-                <div className={modules.ProfileIcon}>
-                  <AccessibilityNewOutlinedIcon
-                    classes={{
-                      root: classes.root,
-                    }}
-                  />
-                </div>
-                <div className={modules.ProfileText}>
-                  <p className={modules.ProfileTexttext}>My Profile</p>
-                </div>
-                <div className={modules.ProfileArrow}>
-                  <NavigateNextOutlinedIcon
-                    classes={{
-                      root: classes.arrowRoot,
-                    }}
-                  />
-                </div>
-              </NavLink>
-            </div>
+            <Headline title={userName} imageURL="/Fruits.jpg" />
             <div className={modules.wrapper}>
               <NavLink style={{ textDecoration: "none" }} to="/">
                 <div className={modules.ProfileIcon}>

@@ -10,20 +10,32 @@ class CategoryPage extends Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      categories: Array(),
-      dishes: Array(),
+      name: String,
+      categories: [],
+      dishes: [],
     };
   }
 
   componentDidMount() {
     // get reference for main doc
-    const docRef = db.collection("menu").doc("smy7J1V4liwCklUdtncK");
+    const menuRef = db.collection("menu").doc("smy7J1V4liwCklUdtncK");
 
-    docRef
+    menuRef
+      .get()
+      .then((doc) => {
+        const data = doc.data();
+        if (data) {
+          this.setState({ name: data["name"] });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    menuRef
       .collection("category")
       .get()
       .then((snapshot) => {
-        // console.log(snapshot);
         const categories = Array();
         const dishes = Array();
         snapshot.forEach((doc) => {
@@ -31,7 +43,7 @@ class CategoryPage extends Component<any, any> {
           categories.push(data);
 
           var id = doc.id;
-          const innerRef = docRef
+          const innerRef = menuRef
             .collection("category")
             .doc(id.toString())
             .collection("items");
@@ -42,8 +54,6 @@ class CategoryPage extends Component<any, any> {
               querySnapshot.forEach((doc) => {
                 const data = doc.data();
                 dishes.push(data);
-
-                console.log(doc.id, " => ", doc.data());
               });
             })
             .catch((error) => {
@@ -51,7 +61,6 @@ class CategoryPage extends Component<any, any> {
             });
         });
         this.setState({ categories: categories, dishes: dishes });
-        console.log(categories);
       })
       .catch((error) => console.log(error));
   }
@@ -60,15 +69,16 @@ class CategoryPage extends Component<any, any> {
     return (
       <div className={modules.Container}>
         <div>
-          <Headline title="Bon Appétit!" imageURL="/Fruits.jpg" />
+          <Headline title={this.state.name} imageURL="/Fruits.jpg" />
         </div>
         <div className={modules.FoodCategory}>
           {this.state.categories &&
-            this.state.categories.map((category) => {
+            this.state.categories.map((category, i) => {
               return (
                 <FoodCategory
                   category={category.name}
                   desc={category.description}
+                  key={i}
                 />
               );
             })}
