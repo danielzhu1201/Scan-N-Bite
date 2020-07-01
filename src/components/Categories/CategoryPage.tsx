@@ -10,25 +10,45 @@ class CategoryPage extends Component<any, any>{
     constructor(props: any) {
         super(props);
         this.state = {
-            categories: Array() 
+            categories: Array(),
+            dishes: Array()
         };
     }
 
     componentDidMount() {
-        db.collection('menu').doc('smy7J1V4liwCklUdtncK').collection('category')
-            .get()
-            .then(snapshot => {
-                // console.log(snapshot);
-                const categories = Array()
-                snapshot.forEach( doc => {
-                    const data = doc.data();
-                    categories.push(data); 
-                })
-                this.setState({categories: categories}); 
-                // console.log(categories); 
+        
+        // get reference for main doc
+        const docRef =  db.collection('menu').doc('smy7J1V4liwCklUdtncK')
 
+        docRef.collection('category')
+        .get()
+        .then(snapshot => {
+            // console.log(snapshot);
+            const categories = Array()
+            const dishes = Array()
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                categories.push(data);
+                
+                var id = doc.id;
+                const innerRef = docRef.collection("category").doc(id.toString()).collection("items")
+
+                innerRef.get().then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        console.log(doc.id, " => ", doc.data());
+                    });
+                })
+                .catch(error => {
+                    console.log("Error getting documents: ", error);
+                });
             })
-            .catch(error => console.log(error)); 
+            this.setState({categories: categories}); 
+            console.log(categories); 
+
+        })
+        .catch(error => console.log(error));
+
+            
     }
 
     render() {
@@ -40,7 +60,7 @@ class CategoryPage extends Component<any, any>{
                 <div className={modules.FoodCategory} >
                 {
                     this.state.categories &&
-                    this.state.categories?.map(category => {
+                    this.state.categories.map(category => {
                         return(
                             <FoodCategory
                                 category={category.name}

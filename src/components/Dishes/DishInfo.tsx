@@ -25,7 +25,7 @@ class DishInfo extends Component<any, any>{
             .then(snapshot => {
                 // console.log(snapshot);
                 const dishes = Array()
-                snapshot.forEach( doc => {
+                snapshot.forEach(doc => {
                     const data = doc.data();
                     dishes.push(data); 
                 })
@@ -37,20 +37,18 @@ class DishInfo extends Component<any, any>{
 
     render() {
         const dishName = 'Lime Rita'
-        
         return (
             <div className={modules.Container}>
                 <div className={modules.FoodInfoHeadline}>
                     <Headline title={dishName} imageURL="/Fruits.jpg" />
                         {
                             this.state.dishes &&
-                            this.state.dishes?.filter(dish => dish.name === dishName)
+                            this.state.dishes.filter(dish => dish.name === dishName)
                             .map(dish => {
                                 return(
                                     <div className={modules.FoodInfoDescriptionWrapper}>
                                         <FoodInfoDescription title={"Description"} content={dish.description} />
                                         <FoodInfoDescription title={"Calories"} content={dish.calories} />
-                                        <FoodInfoDescription title={"Quantity"} content={dish.quantity} />
 
                                         {/* <p>Dish Name: {dish.name}</p>
                                         <p>Dish Description: {dish.description}</p>
@@ -63,8 +61,6 @@ class DishInfo extends Component<any, any>{
                                     </div>
                                 )
                             })
-
-                            
                         }
                 </div>
             </div>
