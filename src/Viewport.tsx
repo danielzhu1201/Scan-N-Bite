@@ -11,7 +11,9 @@ import Login from "./Login";
 import Home from "./Home";
 import MenuCategory from "./views/Category";
 import FoodInfo from "./views/FoodInfo";
-import CheckOut from "./views/CheckOut"
+import Profile from "./views/Profile"
+
+import MenuCategoryView from './containers/menu/category';
 
 export default function Viewport() {
   return (
@@ -25,7 +27,7 @@ export default function Viewport() {
           <Route exact path="/specific" component={TypyOfFood} />
           <Route exact path="/food" component={FoodInfo} />
           <Route exact path="/check" component={Check} />
-          <Route exact path="/checkout" component={CheckOut}/>
+          <Route exact path="/profile" component={Profile} />
           <Route component={NotFoundPage} />
         </Switch>
         <ComFooter />
