@@ -74,9 +74,10 @@ class TypeOfFood extends Component<any, any> {
           src={process.env.PUBLIC_URL + imgURL}
           alt={"Item Pic here"}
         />
-        <div
-          className={modules.TitleText}
-        >{`Select Your Favourite Dishes`}</div>
+        <div className={modules.TitleText}>{`Select Your ${
+          this.props.match.params.type.charAt(0).toUpperCase() +
+          this.props.match.params.type.slice(1)
+        }`}</div>
         <div className={modules.ItemContainer}>
           {this.state.dishes.length == 0 && (
             <ItemOverview
