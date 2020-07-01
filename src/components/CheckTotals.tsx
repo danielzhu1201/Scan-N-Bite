@@ -12,27 +12,30 @@ export default function CheckTotals() {
         console.log(checkTotal)
     }
   return (
-      <div className={modules.checkStub}>
-        <div className={modules.Totals}>
-            <div className={modules.checkTotal}>SubTotal</div>
-                <div className={modules.checkAmount} id="subTotal">$  {checkSubtotal}</div>
-        </div> 
-        <div className={modules.Totals}>
-            <div className={modules.checkTotal}>Tip</div>
-            <div className={modules.tipInput}>
-                $ <input type="number" id="tipBox"className={modules.Tip} value={tipTotal} onChange={(e)=> setTipTotal(parseFloat(e.target.value))}/>
+    <div className={modules.SubTotal}>
+        <hr className={modules.break}/>
+        <div className={modules.checkStub}>
+            <div className={modules.Totals}>
+                <div className={modules.checkTotal}>SubTotal</div>
+                    <div className={modules.checkAmount} id="subTotal">$  {checkSubtotal}</div>
+            </div> 
+            <div className={modules.Totals}>
+                <div className={modules.checkTotal}>Tip</div>
+                <div className={modules.tipInput}>
+                    $ <input type="number" id="tipBox"className={modules.Tip} value={tipTotal} onChange={(e)=> setTipTotal(parseFloat(e.target.value))}/>
+                </div>
             </div>
-        </div>
-        <div className={modules.tipButtons}>
-            <div className={modules.container}>
-                <button className={modules.button} onClick={(e) => setTipTotal(checkSubtotal*.15)}>15%</button>
-                <button className={modules.button} onClick={(e) => setTipTotal(checkSubtotal*.20)}>20%</button>
-                <button className={modules.button} onClick={(e) => setTipTotal(checkSubtotal*.25)}>25%</button>
+            <div className={modules.tipButtons}>
+                <div className={modules.container}>
+                    <button className={modules.button} onClick={(e) => setTipTotal(checkSubtotal*.15)}>15%</button>
+                    <button className={modules.button} onClick={(e) => setTipTotal(checkSubtotal*.20)}>20%</button>
+                    <button className={modules.button} onClick={(e) => setTipTotal(checkSubtotal*.25)}>25%</button>
+                </div>
+            </div> 
+            <div className={modules.Totals}>
+                <div className={modules.checkTotal}>Total</div>
+                <div className={modules.checkAmount}>$ {checkSubtotal + tipTotal}</div>
             </div>
-        </div> 
-        <div className={modules.Totals}>
-            <div className={modules.checkTotal}>Total</div>
-            <div className={modules.checkAmount}>$ {checkSubtotal + tipTotal}</div>
         </div>
     </div>
   );

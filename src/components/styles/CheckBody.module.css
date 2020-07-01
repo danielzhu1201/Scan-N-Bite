@@ -13,6 +13,7 @@
 
 .Check {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -32,4 +33,11 @@
   line-height: 33px;
   color: #000000;
   margin: 25px 10px 10px 15px;
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
