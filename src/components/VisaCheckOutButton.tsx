@@ -5,8 +5,6 @@ export default function VisaCheckOutButton() {
   return (
     <div className={modules.Container}>
       <button className={modules.button}>Visa Check Out</button>
-      <div id="modal"></div>
     </div>
-
   );
 }
