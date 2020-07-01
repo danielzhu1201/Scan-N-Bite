@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firebaseApp from "../../config/firebase";
 import FoodCategory from "../FoodCategory";
 import Headline from "../Headline";
+import { NavLink } from "react-router-dom";
 import modules from "../../views/styles/Category.module.css";
 
 const db = firebaseApp.firestore();
@@ -48,7 +49,7 @@ class CategoryPage extends Component<any, any> {
             .doc(id.toString())
             .collection("items");
 
-          innerRef
+          /*innerRef
             .get()
             .then((querySnapshot) => {
               querySnapshot.forEach((doc) => {
@@ -58,9 +59,9 @@ class CategoryPage extends Component<any, any> {
             })
             .catch((error) => {
               console.log("Error getting documents: ", error);
-            });
+            });*/
         });
-        this.setState({ categories: categories, dishes: dishes });
+        this.setState({ categories: categories });
       })
       .catch((error) => console.log(error));
   }
@@ -75,11 +76,17 @@ class CategoryPage extends Component<any, any> {
           {this.state.categories &&
             this.state.categories.map((category, i) => {
               return (
-                <FoodCategory
-                  category={category.name}
-                  desc={category.description}
+                <NavLink
+                  style={{ textDecoration: "none" }}
+                  to={`/category/${category.name.toLowerCase()}`}
                   key={i}
-                />
+                >
+                  <FoodCategory
+                    category={category.name}
+                    desc={category.description}
+                    key={i}
+                  />
+                </NavLink>
               );
             })}
         </div>
