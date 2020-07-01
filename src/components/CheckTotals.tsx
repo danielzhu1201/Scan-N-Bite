@@ -14,7 +14,7 @@ export default function CheckTotals() {
   }
   return (
     <div className={modules.SubTotal}>
-      <Divider style={{ width: "65%" }} />
+      <Divider style={{ width: "80%" }} />
       <div className={modules.checkStub}>
         <div className={modules.Totals}>
           <div className={modules.checkTotal}>SubTotal</div>

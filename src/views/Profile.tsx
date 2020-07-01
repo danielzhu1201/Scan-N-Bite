@@ -39,6 +39,15 @@ const Profile: React.FC = () => {
       if (user) {
         setUserName(user.displayName!);
         setUser(true);
+        const userRef = firebaseApp
+          .firestore()
+          .collection("users")
+          .doc(user.uid!);
+        userRef.get().then((snapshot) => {
+          if (!snapshot.exists) {
+            userRef.set({});
+          }
+        });
       } else {
         setUser(false);
       }

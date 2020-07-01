@@ -14,7 +14,7 @@ const Headline: React.FC<HeadlineProps> = ({ title, imageURL }) => {
     <div className={modules.Headline}>
       <img className={modules.HeadlineImg} src={imageURL} />
       <div className={modules.HeadlineTitle}>{title}</div>
-      <Divider style={{ width: "300px", margin: "10px 0px" }} />
+      <Divider style={{ width: "80%", margin: "10px 0px" }} />
     </div>
   );
 };

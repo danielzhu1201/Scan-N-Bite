@@ -16,9 +16,6 @@ import modules from "./styles/Login.module.css";
 class Login extends Component<any, any> {
   constructor(props: any) {
     super(props);
-    // this.login = this.login.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
-    // this.signup = this.signup.bind(this);
     this.state = {
       email: "",
       password: "",
