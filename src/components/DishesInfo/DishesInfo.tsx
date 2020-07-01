@@ -11,7 +11,7 @@ import modules from "../styles/FoodInfo.module.css";
 
 const db = firebaseApp.firestore(); 
 
-class DishInfo extends Component<any, any>{
+class DishesInfo extends Component<any, any>{
     constructor(props: any) {
         super(props);
         this.state = {
@@ -28,7 +28,6 @@ class DishInfo extends Component<any, any>{
                 snapshot.forEach(doc => {
                     const data = doc.data();
                     dishes.push(data); 
-                    console.log(dishes);
                 })
                 this.setState({dishes: dishes}); 
                 // console.log(dishes); 
@@ -37,28 +36,28 @@ class DishInfo extends Component<any, any>{
     }
 
     render() {
-        const dishName = 'Lime Rita'
         return (
             <div className={modules.Container}>
                 <div className={modules.FoodInfoHeadline}>
-                    <Headline title={dishName} imageURL="/Fruits.jpg" />
+                    <Headline title="Dishes" imageURL="/Fruits.jpg" />
                         {
-                            this.state.dishes &&
-                            this.state.dishes.filter(dish => dish.name === dishName)
+                            this.state.dishes
                             .map(dish => {
                                 return(
                                     <div className={modules.FoodInfoDescriptionWrapper}>
+                                        <Headline title={dish.name} imageURL="/Fruits.jpg" />
                                         <FoodInfoDescription title={"Description"} content={dish.description} />
                                         <FoodInfoDescription title={"Calories"} content={dish.calories} />
+                                        
 
                                         {/* <p>Dish Name: {dish.name}</p>
                                         <p>Dish Description: {dish.description}</p>
                                         <p>Dish Calories: {dish.calories}</p>
                                         <p>Dish Quantity: {dish.quantity}</p> */}
 
-                                        <div className={modules.FoodInfoOrderButton}>
+                                        {/*<div className={modules.FoodInfoOrderButton}>
                                         <OrderButton price={dish.price} />
-                                        </div>
+                                        </div>*/}
                                     </div>
                                 )
                             })
@@ -69,4 +68,4 @@ class DishInfo extends Component<any, any>{
     }
 }
 
-export default DishInfo; 
+export default DishesInfo; 
