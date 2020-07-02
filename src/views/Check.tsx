@@ -16,6 +16,7 @@ class Check extends Component<any, any> {
     super(props);
     this.state = {
       checkOut: false,
+      subtotal: 0.0,
       total: 0.0,
       items: [],
     };
@@ -39,6 +40,14 @@ class Check extends Component<any, any> {
   }*/
 
   componentDidMount() {
+    /* A one-time reload to make Visa Checkout Work */
+    if (!window.localStorage.getItem("firstLoad")) {
+      localStorage.setItem("firstLoad", "true");
+      window.location.reload();
+    } else {
+      localStorage.removeItem("firstLoad");
+    }
+
     firebaseApp.auth().onAuthStateChanged((user) => {
       var total = 0.0;
       if (user) {
@@ -56,7 +65,7 @@ class Check extends Component<any, any> {
             total = total + parseFloat(data.price) * parseInt(data.qty);
           });
           this.setState({
-            total: total,
+            subtotal: total,
             items: allItem,
           });
         });
@@ -85,15 +94,18 @@ class Check extends Component<any, any> {
               );
             })}
           </div>
-          {/*{checkBalances}
-        {paymentOptions}*/}
-          <img
-            alt="Visa Checkout"
-            className="v-button"
-            role="button"
-            src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"
-          />
         </div>
+        <CheckTotals
+          subTotal={this.state.subtotal}
+          callBack={(val) => this.setState({ total: val })}
+        />
+        <div>{this.state.total}</div>
+        <img
+          alt="Visa Checkout"
+          className="v-button"
+          role="button"
+          src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"
+        />
       </div>
     );
   }

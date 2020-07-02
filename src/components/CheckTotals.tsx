@@ -9,7 +9,7 @@ interface CheckTotalsProps {
 }
 
 const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
-  const [tipTotal, setTipTotal] = useState(0);
+  const [tipTotal, setTipTotal] = useState("0");
 
   return (
     <div className={modules.SubTotal}>
@@ -26,11 +26,16 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
           <div className={modules.tipInput}>
             ${" "}
             <input
-              type="number"
               id="tipBox"
               className={modules.Tip}
               value={tipTotal}
-              onChange={(e) => setTipTotal(parseFloat(e.target.value))}
+              onChange={(e) => {
+                setTipTotal(e.target.value);
+                const val = parseFloat(e.target.value);
+                if (!Number.isNaN(val)) {
+                  callBack(subTotal + val);
+                }
+              }}
             />
           </div>
         </div>
@@ -39,10 +44,8 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
             <button
               className={modules.button}
               onClick={(e) => {
-                setTipTotal(subTotal * 0.15);
-                callBack(
-                  Number.isNaN(subTotal + tipTotal) ? 0.0 : subTotal + tipTotal
-                );
+                setTipTotal((subTotal * 0.15).toString());
+                callBack(subTotal * 1.15);
               }}
             >
               15%
@@ -50,10 +53,8 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
             <button
               className={modules.button}
               onClick={(e) => {
-                setTipTotal(subTotal * 0.2);
-                callBack(
-                  Number.isNaN(subTotal + tipTotal) ? 0.0 : subTotal + tipTotal
-                );
+                setTipTotal((subTotal * 0.2).toString());
+                callBack(subTotal * 1.2);
               }}
             >
               20%
@@ -61,10 +62,8 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
             <button
               className={modules.button}
               onClick={(e) => {
-                setTipTotal(subTotal * 0.25);
-                callBack(
-                  Number.isNaN(subTotal + tipTotal) ? 0.0 : subTotal + tipTotal
-                );
+                setTipTotal((subTotal * 0.25).toString());
+                callBack(subTotal * 1.25);
               }}
             >
               25%
@@ -74,7 +73,10 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
         <div className={modules.Totals}>
           <div className={modules.checkTotal}>Total</div>
           <div className={modules.checkAmount}>
-            $ {Number.isNaN(subTotal + tipTotal) ? "..." : subTotal + tipTotal}
+            ${" "}
+            {Number.isNaN(parseFloat(tipTotal))
+              ? "..."
+              : subTotal + parseFloat(tipTotal)}
           </div>
         </div>
       </div>
