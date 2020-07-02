@@ -26,26 +26,6 @@
       rel="stylesheet"
     />
     <!--
-      Visa
-    -->
-    <script type="text/javascript">
-      function onVisaCheckoutReady() {
-        console.log("Visa Checkout ready");
-        V.init({
-          apikey: "PQY61HUOVKXW1E1AITP621_jPkgtZlzt9320UI02Ergl9PF5g",
-          encryptionKey: "W9O4GYP5A4UOXGU2RR4513FZ-EpKghPT6dT1QKiVvNFCzO5Ms",
-          payment: {
-            cardBrands: ["VISA", "MASTERCARD", "AMEX", "DINERS", "DISCOVER"],
-          },
-          paymentRequest: {
-            currencyCode: "USD",
-            subtotal: "20.00",
-          },
-          dataLevel: "NONE",
-        });
-      }
-    </script>
-    <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
@@ -83,9 +63,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script
-      type="text/javascript"
-      src="https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js"
-    ></script>
   </body>
 </html>

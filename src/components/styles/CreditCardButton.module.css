@@ -1,7 +1,8 @@
 .Container {
   display: flex;
   justify-content: center;
-  width: 228px;
+  width: 213px;
+  height: 41px;
   margin: 10px 0px;
 }
 

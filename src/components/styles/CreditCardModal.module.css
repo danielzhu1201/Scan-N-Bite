@@ -1,82 +1,82 @@
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: .9;
-    z-index: 1040;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 1040;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    position: relative;
-    top: 14%;
-    left: 7%;
-    width: 85%;
-    border-radius: 10px;
-    border: 2px solid black;
-    padding: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  top: 14%;
+  left: 7%;
+  width: 85%;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
 }
 
 .modalClose {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .exit {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .CreditCardForm {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.InputWrapper{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.InputWrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .Name {
-    width: 80%;
-    height: 40px;
+  width: 80%;
+  height: 40px;
 }
 
 .ExpirationDate {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 }
 
 .CreditCardExpirationDate {
-    height: 40px;
-    width: 36%;
+  height: 40px;
+  width: 36%;
 }
 
 .Slash {
-    height: 40px;
-    font-size: 40px;
-    margin-left: 2px;
-    margin-right: 2px;
+  height: 40px;
+  font-size: 40px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 .CCPay {
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 38px;
-    margin: 10px 10px 20px 10px;
-    width: 100%;
-    color: #000000;
-    background: #FDBB0A;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+  margin: 10px 10px 20px 10px;
+  width: 100%;
+  color: #000000;
+  background: #fdbb0a;
 }
