@@ -5,8 +5,6 @@ import banners from "../config/banner";
 
 import modules from "./styles/PastOrders.module.css";
 
-const db = firebaseApp.firestore();
-
 class PastOrders extends Component<any, any> {
   constructor(props: any) {
     super(props);

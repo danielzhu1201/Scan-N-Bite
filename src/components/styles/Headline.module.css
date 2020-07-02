@@ -23,6 +23,7 @@
   border-color: lightgray;
   border-radius: 15px;
   box-shadow: 0 0 5px #9e9e9e;
+  object-fit: cover;
 }
 
 .HeadlineTitle {

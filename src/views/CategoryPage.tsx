@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import firebaseApp from "../../config/firebase";
-import FoodCategory from "../FoodCategory";
-import Headline from "../Headline";
+import firebaseApp from "../config/firebase";
+import FoodCategory from "../components/FoodCategory";
+import Headline from "../components/Headline";
 import { NavLink } from "react-router-dom";
-import modules from "../../views/styles/Category.module.css";
+import modules from "./styles/Category.module.css";
 
 const db = firebaseApp.firestore();
 

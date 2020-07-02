@@ -1,14 +1,10 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import ItemOverview from "../components/ItemOverview";
 import { withRouter } from "react-router-dom";
-import firebaseApp from "../config/firebase";
 import { NavLink } from "react-router-dom";
 import modules from "./styles/TypeOfFood.module.css";
-import { render } from "@testing-library/react";
 import refs from "../config/dbrefs";
 import banners from "../config/banner";
-
-const imgURL = "/Fruits.jpg";
 
 class TypeOfFood extends Component<any, any> {
   constructor(props: any) {

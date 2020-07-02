@@ -8,12 +8,6 @@ interface CheckItemProps {
   price: number;
 }
 
-/* 
-const itemName = "Item Name Here!";
-  const itemQuantity = "1";
-  const itemCost = "$ 5.75";
-*/
-
 const CheckItem: React.FC<CheckItemProps> = ({ name, qty, price }) => {
   return (
     <div className={modules.Item}>

@@ -1,17 +1,11 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import CheckItem from "../components/CheckItems";
-import CheckOutButtion from "../components/CheckoutButton";
-import logo from "../logo.svg";
 import CheckTotals from "../components/CheckTotals";
-import CreditCardButton from "../components/CreditCardButton";
-import CashButton from "../components/cashButton";
 import firebaseApp from "../config/firebase";
+import banners from "../config/banner";
 
 import modules from "../views/styles/CheckBody.module.css";
-import { render } from "@testing-library/react";
-import CheckoutButton from "../components/CheckoutButton";
-import banners from "../config/banner";
 
 class Check extends Component<any, any> {
   constructor(props: any) {

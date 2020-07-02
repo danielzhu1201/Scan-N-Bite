@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
-import AccessibilityNewOutlinedIcon from "@material-ui/icons/AccessibilityNewOutlined";
 import RestoreOutlinedIcon from "@material-ui/icons/RestoreOutlined";
 import PublicOutlinedIcon from "@material-ui/icons/PublicOutlined";
 import NavigateNextOutlinedIcon from "@material-ui/icons/NavigateNextOutlined";

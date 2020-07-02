@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import Button from "@material-ui/core/Button";
 
