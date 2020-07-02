@@ -34,7 +34,6 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
                 setTipTotal(target);
                 const val = parseFloat(target);
                 if (!Number.isNaN(val)) {
-                  console.log((subTotal + val).toFixed(3));
                   callBack((subTotal + val).toFixed(3));
                 }
               }}

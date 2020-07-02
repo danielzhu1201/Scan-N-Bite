@@ -32,7 +32,6 @@ class FoodInfo extends Component<any, any> {
       .then((doc) => {
         const data = doc.data();
         if (data) {
-          console.log(data);
           this.setState({ info: data });
         }
       });

@@ -24,7 +24,6 @@ class TypeOfFood extends Component<any, any> {
           const id = doc.id;
           var data = doc.data();
           data["id"] = id;
-          console.log(data);
           dishes.push(data);
         });
         this.setState({ dishes: dishes });

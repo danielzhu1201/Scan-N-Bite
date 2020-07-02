@@ -27,9 +27,7 @@ class Login extends Component<any, any> {
     firebaseApp
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {
-        console.log("success");
-      })
+      .then((u) => {})
       .catch((error) => {
         ToastsStore.error(error.message);
       });
