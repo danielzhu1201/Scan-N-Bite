@@ -23,7 +23,6 @@ const waitModal = ({ isShowing, hide }) =>
                   <input
                     type="text"
                     className={modules.Name}
-                    value=""
                     placeholder="Name"
                   />
                 </div>
