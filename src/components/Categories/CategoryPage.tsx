@@ -81,7 +81,10 @@ class CategoryPage extends Component<any, any> {
                 >
                   <FoodCategory
                     category={category.name}
-                    desc={category.description}
+                    desc={category.description
+                      .split(" ")
+                      .splice(0, 15)
+                      .join(" ")}
                     key={i}
                   />
                 </NavLink>

@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
-  padding: 10px 5px;
+  margin: 5px 0px;
 }
 
 .ItemName {

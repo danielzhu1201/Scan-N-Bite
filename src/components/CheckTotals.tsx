@@ -30,10 +30,12 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
               className={modules.Tip}
               value={tipTotal}
               onChange={(e) => {
-                setTipTotal(e.target.value);
-                const val = parseFloat(e.target.value);
+                const target = e.target.value;
+                setTipTotal(target);
+                const val = parseFloat(target);
                 if (!Number.isNaN(val)) {
-                  callBack(subTotal + val);
+                  console.log((subTotal + val).toFixed(3));
+                  callBack((subTotal + val).toFixed(3));
                 }
               }}
             />
@@ -45,7 +47,7 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
               className={modules.button}
               onClick={(e) => {
                 setTipTotal((subTotal * 0.15).toString());
-                callBack(subTotal * 1.15);
+                callBack((subTotal * 1.15).toFixed(3));
               }}
             >
               15%
@@ -54,7 +56,7 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
               className={modules.button}
               onClick={(e) => {
                 setTipTotal((subTotal * 0.2).toString());
-                callBack(subTotal * 1.2);
+                callBack((subTotal * 1.2).toFixed(3));
               }}
             >
               20%
@@ -63,7 +65,7 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
               className={modules.button}
               onClick={(e) => {
                 setTipTotal((subTotal * 0.25).toString());
-                callBack(subTotal * 1.25);
+                callBack((subTotal * 1.25).toFixed(3));
               }}
             >
               25%
@@ -76,7 +78,7 @@ const CheckTotals: React.FC<CheckTotalsProps> = ({ subTotal, callBack }) => {
             ${" "}
             {Number.isNaN(parseFloat(tipTotal))
               ? "..."
-              : subTotal + parseFloat(tipTotal)}
+              : (subTotal + parseFloat(tipTotal)).toFixed(3)}
           </div>
         </div>
       </div>

@@ -24,14 +24,6 @@ class Check extends Component<any, any> {
   }
 
   componentDidMount() {
-    /* A one-time reload to make Visa Checkout Work */
-    if (!window.localStorage.getItem("firstLoad")) {
-      localStorage.setItem("firstLoad", "true");
-      window.location.reload();
-    } else {
-      localStorage.removeItem("firstLoad");
-    }
-
     firebaseApp.auth().onAuthStateChanged((user) => {
       var total = 0.0;
       if (user) {
@@ -64,15 +56,18 @@ class Check extends Component<any, any> {
   }
 
   render() {
-    const changeMargin = {
-      margin: "0px 0px 50px 0px",
-    };
     return (
       <div className={modules.Container}>
         <img src={logo} className={modules.TypeLogo} alt="TypePic" />
-        <div className={modules.CheckTitle}> Your Check</div>
+        {this.state.subtotal > 0 ? (
+          <div className={modules.CheckTitle}>Your Check</div>
+        ) : (
+          <div className={modules.NoItem}>
+            {`Your Items Will Appear As You Order!`}
+          </div>
+        )}
         <div className={modules.Check}>
-          <div className={modules.OrderedItems} style={changeMargin}>
+          <div className={modules.OrderedItems}>
             {this.state.items.map((item, i) => {
               return (
                 <CheckItem
@@ -85,35 +80,39 @@ class Check extends Component<any, any> {
             })}
           </div>
         </div>
-        <CheckTotals
-          subTotal={this.state.subtotal}
-          callBack={(val) => this.setState({ total: val })}
-        />
-        <NavLink
-          to={{
-            pathname: "/pay",
-            paymentProps: {
-              amount: this.state.total,
-            },
-          }}
-          onClick={() => {
-            firebaseApp.auth().onAuthStateChanged((user) => {
-              if (user) {
-                const uid = user.uid!;
-                const orderRef = firebaseApp
-                  .firestore()
-                  .collection("users")
-                  .doc(uid)
-                  .update({
-                    total: this.state.total,
-                  });
-              }
-            });
-          }}
-          style={{ textDecoration: "none" }}
-        >
-          <button className={modules.Button}>Check Out</button>
-        </NavLink>
+        {this.state.subtotal > 0 && (
+          <CheckTotals
+            subTotal={this.state.subtotal}
+            callBack={(val) => this.setState({ total: val })}
+          />
+        )}
+        {this.state.subtotal > 0 && (
+          <NavLink
+            to={{
+              pathname: "/pay",
+              paymentProps: {
+                amount: this.state.total,
+              },
+            }}
+            onClick={() => {
+              firebaseApp.auth().onAuthStateChanged((user) => {
+                if (user) {
+                  const uid = user.uid!;
+                  const orderRef = firebaseApp
+                    .firestore()
+                    .collection("users")
+                    .doc(uid)
+                    .update({
+                      total: this.state.total,
+                    });
+                }
+              });
+            }}
+            style={{ textDecoration: "none" }}
+          >
+            <button className={modules.Button}>Check Out</button>
+          </NavLink>
+        )}
       </div>
     );
   }
