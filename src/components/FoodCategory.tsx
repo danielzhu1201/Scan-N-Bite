@@ -7,17 +7,13 @@ const imgURL = "/food.jpg";
 interface FoodCategoryProps {
   category: string;
   desc: string;
+  img: string;
 }
 
-const FoodCategory: React.FC<FoodCategoryProps> = ({ category, desc }) => {
-  const [imageURL, setImageURL] = useState(imgURL);
-
+const FoodCategory: React.FC<FoodCategoryProps> = ({ category, desc, img }) => {
   return (
     <div className={modules.FoodCatogory}>
-      <img
-        className={modules.FoodCategoryImg}
-        src={process.env.PUBLIC_URL + imageURL}
-      />
+      <img className={modules.FoodCategoryImg} src={img} />
       <p className={modules.FoodCategoryCategoryName}>{category}</p>
       <p className={modules.FoodCategoryCategoryDesc}>{desc}</p>
     </div>

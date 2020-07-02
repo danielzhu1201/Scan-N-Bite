@@ -85,6 +85,7 @@ class CategoryPage extends Component<any, any> {
                       .split(" ")
                       .splice(0, 15)
                       .join(" ")}
+                    img={category.img}
                     key={i}
                   />
                 </NavLink>

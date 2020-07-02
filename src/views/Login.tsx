@@ -4,7 +4,6 @@ import "firebase/auth";
 import uiConfig from "../config/uiConfig";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import Divider from "@material-ui/core/Divider";
-import TextField from "@material-ui/core/TextField";
 import {
   ToastsContainer,
   ToastsStore,
@@ -65,7 +64,7 @@ class Login extends Component<any, any> {
             <span>Dining Experience!</span>
           </p>
         </div>
-        <div className={modules.LoginContainer}>
+        {/*<div className={modules.LoginContainer}>
           <TextField
             className={modules.loginInputEmail}
             value={this.state.email}
@@ -95,21 +94,12 @@ class Login extends Component<any, any> {
             <p>Sign In</p>
           </button>
 
-          <div className={modules.loginLineBreak}>
-            <div className={modules.loginLineBreakLeft}>
-              <Divider style={{ width: "120px", margin: "10px 0px" }} />
-            </div>
-            <p>OR</p>
-            <div className={modules.loginLineBreakRight}>
-              <Divider style={{ width: "120px", margin: "10px 0px" }} />
-            </div>
-          </div>
-
-          <StyledFirebaseAuth
-            uiConfig={uiConfig}
-            firebaseAuth={firebaseApp.auth()}
-          />
-        </div>
+    */}
+        <Divider style={{ width: "65%", margin: "0px 0px 5px 0px" }} />
+        <StyledFirebaseAuth
+          uiConfig={uiConfig}
+          firebaseAuth={firebaseApp.auth()}
+        />
       </div>
     );
   }

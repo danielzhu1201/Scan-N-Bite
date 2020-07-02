@@ -37,7 +37,14 @@ const Profile: React.FC = () => {
   const authListener = () => {
     firebaseApp.auth().onAuthStateChanged((user) => {
       if (user) {
-        setUserName(user.displayName!);
+        var displayName = user.displayName || "";
+        if (displayName.length === 0) {
+          user.updateProfile({
+            displayName: "Zhaosong Zhu",
+          });
+          displayName = "Zhaosong Zhu";
+        }
+        setUserName(displayName);
         setUser(true);
         const userRef = firebaseApp
           .firestore()
@@ -95,7 +102,7 @@ const Profile: React.FC = () => {
                   />
                 </div>
                 <div className={modules.ProfileText}>
-                  <p className={modules.ProfileTexttext}>About This Project</p>
+                  <p className={modules.ProfileTexttext}>About Us</p>
                 </div>
                 <div className={modules.ProfileArrow}>
                   <NavigateNextOutlinedIcon
