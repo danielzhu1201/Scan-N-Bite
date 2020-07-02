@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import modules from "./styles/FoodCategory.module.css";
 
-const imgURL = "/food.jpg";
-
 interface FoodCategoryProps {
   category: string;
   desc: string;

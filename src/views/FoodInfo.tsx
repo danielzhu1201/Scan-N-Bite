@@ -45,12 +45,20 @@ class FoodInfo extends Component<any, any> {
           {/* TODO: need add ArrowBack into headline, and use a props/redux to indicate showing arrowback or not */}
           <Headline
             title={this.state.info.name}
-            imageURL={this.state.info.picture}
+            imageURL={this.state.info.img}
           />
           <div className={modules.FoodInfoDescriptionWrapper}>
             <FoodInfoDescription
               title={"Description"}
               content={this.state.info.description}
+            />
+            <FoodInfoDescription
+              title={"Ingredients"}
+              content={this.state.info.ingredients}
+            />
+            <FoodInfoDescription
+              title={"Calories"}
+              content={`${this.state.info.calories} Cal.`}
             />
           </div>
         </div>

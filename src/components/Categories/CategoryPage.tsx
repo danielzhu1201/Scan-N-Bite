@@ -48,18 +48,6 @@ class CategoryPage extends Component<any, any> {
             .collection("category")
             .doc(id.toString())
             .collection("items");
-
-          /*innerRef
-            .get()
-            .then((querySnapshot) => {
-              querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                dishes.push(data);
-              });
-            })
-            .catch((error) => {
-              console.log("Error getting documents: ", error);
-            });*/
         });
         this.setState({ categories: categories });
       })

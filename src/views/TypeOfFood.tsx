@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import modules from "./styles/TypeOfFood.module.css";
 import { render } from "@testing-library/react";
 import refs from "../config/dbrefs";
+import banners from "../config/banner";
 
 const imgURL = "/Fruits.jpg";
 
@@ -40,7 +41,7 @@ class TypeOfFood extends Component<any, any> {
       <div className={modules.Container}>
         <img
           className={modules.Banner}
-          src={process.env.PUBLIC_URL + imgURL}
+          src={banners[this.props.match.params.type]}
           alt={"Item Pic here"}
         />
         <div className={modules.TitleText}>{`Select Your ${
@@ -73,7 +74,7 @@ class TypeOfFood extends Component<any, any> {
                     }...`}
                     price={`$${info.price}`}
                     cal={`${info.calories} Cal.`}
-                    imageURL={`${process.env.PUBLIC_URL}/food.jpg`}
+                    imageURL={info.img}
                     key={i}
                   />
                 </NavLink>
