@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import firebaseApp from "../config/firebase";
 
+import banners from "../config/banner";
+
 import modules from "./styles/PastOrders.module.css";
 
 const db = firebaseApp.firestore();
@@ -36,7 +38,11 @@ class PastOrders extends Component<any, any> {
   render() {
     return (
       <div className={modules.Container}>
-        <img src={"../logo.svg"} className={modules.TypeLogo} alt="TypePic" />
+        <img
+          src={banners.desserts}
+          className={modules.TypeLogo}
+          alt="TypePic"
+        />
         <div className={modules.Title}>Your Past Orders</div>
         {this.state.orders.map((info, i) => {
           return (
@@ -49,6 +55,11 @@ class PastOrders extends Component<any, any> {
             </div>
           );
         })}
+        {this.state.orders.length === 0 && (
+          <div className={modules.Notification}>
+            Come Back Later To See Your Order History
+          </div>
+        )}
       </div>
     );
   }

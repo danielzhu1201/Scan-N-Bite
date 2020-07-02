@@ -11,6 +11,7 @@ import firebaseApp from "../config/firebase";
 import modules from "../views/styles/CheckBody.module.css";
 import { render } from "@testing-library/react";
 import CheckoutButton from "../components/CheckoutButton";
+import banners from "../config/banner";
 
 class Check extends Component<any, any> {
   constructor(props: any) {
@@ -58,7 +59,7 @@ class Check extends Component<any, any> {
   render() {
     return (
       <div className={modules.Container}>
-        <img src={logo} className={modules.TypeLogo} alt="TypePic" />
+        <img src={banners.entrees} className={modules.TypeLogo} alt="TypePic" />
         {this.state.subtotal > 0 ? (
           <div className={modules.CheckTitle}>Your Check</div>
         ) : (
