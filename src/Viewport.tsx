@@ -12,6 +12,8 @@ import Home from "./Home";
 import Pay from "./views/Pay";
 import FoodInfo from "./views/FoodInfo";
 import Profile from "./views/Profile";
+import Success from "./views/Success";
+import Failure from "./views/Failure";
 import CategoryPage from "./components/Categories/CategoryPage";
 
 export default function Viewport() {
@@ -28,6 +30,8 @@ export default function Viewport() {
           <Route exact path="/check" component={Check} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/pay" component={Pay} />
+          <Route exact path="/success" component={Success} />
+          <Route exact path="/failure" component={Failure} />
           <Route component={NotFoundPage} />
         </Switch>
         <ComFooter />

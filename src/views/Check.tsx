@@ -23,23 +23,6 @@ class Check extends Component<any, any> {
     };
   }
 
-  /*
-  var checkBalances, paymentOptions;
-  if (checkOut) {
-    changeMargin.margin = "10px";
-    checkBalances = (
-      <CheckTotals subTotal={100.5} callBack={(val) => setTotal(val)} />
-    );
-    paymentOptions = (
-      <div className={modules.Buttons}>
-        <CreditCardButton />
-        <CashButton />
-      </div>
-    );
-  } else {
-    paymentOptions = <CheckOutButtion beginCheckout={setCheckOut} />;
-  }*/
-
   componentDidMount() {
     /* A one-time reload to make Visa Checkout Work */
     if (!window.localStorage.getItem("firstLoad")) {
@@ -70,6 +53,11 @@ class Check extends Component<any, any> {
             total: total,
             items: allItem,
           });
+          const orderRef = firebaseApp
+            .firestore()
+            .collection("users")
+            .doc(uid)
+            .update({});
         });
       }
     });
@@ -107,6 +95,20 @@ class Check extends Component<any, any> {
             paymentProps: {
               amount: this.state.total,
             },
+          }}
+          onClick={() => {
+            firebaseApp.auth().onAuthStateChanged((user) => {
+              if (user) {
+                const uid = user.uid!;
+                const orderRef = firebaseApp
+                  .firestore()
+                  .collection("users")
+                  .doc(uid)
+                  .update({
+                    total: this.state.total,
+                  });
+              }
+            });
           }}
           style={{ textDecoration: "none" }}
         >

@@ -1,0 +1,16 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0px 80px 0px;
+}
+
+.Text {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 38px;
+  margin: 30px 0px;
+}

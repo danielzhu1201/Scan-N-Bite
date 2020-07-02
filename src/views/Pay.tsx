@@ -20,16 +20,16 @@ class Pay extends React.Component<any, any> {
 
     return (
       <React.Fragment>
-        {true ? (
+        {info ? (
           <div className={modules.Container}>
             <div className={modules.Total}>Your total is</div>
-            <div className={modules.TotalNum}>{`$${10}`}</div>
+            <div className={modules.TotalNum}>{`$${info.amount}`}</div>
             <Divider style={{ width: "80%", margin: "10px 0px" }} />
             <div className={modules.CheckoutText}>
               How would you like to checkout?
             </div>
             <Helmet>
-              <script type="text/javascript">{`var amount = ${10};`}</script>
+              <script type="text/javascript">{`var amount = ${info.amount};`}</script>
               <script type="text/javascript">{`console.log(amount)`}</script>
               <script
                 type="text/javascript"
@@ -50,14 +50,13 @@ class Pay extends React.Component<any, any> {
                     dataLevel: "NONE",
                     });
                     V.on("payment.success", function (payment) {
-                    localStorage.setItem("status", "Success");
-                    
+                    window.location.href = '/success';
                     });
                     V.on("payment.cancel", function (payment) {
-                    localStorage.setItem("status", "Cancel");
+                    window.location.href = '/failure';
                     });
                     V.on("payment.error", function (payment, error) {
-                    localStorage.setItem("status", "Fail");
+                    window.location.href = '/failure';
                     });
                 }`}
               </script>

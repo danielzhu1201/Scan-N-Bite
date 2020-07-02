@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-
+import { NavLink } from "react-router-dom";
 import exit from "../exit.svg";
 
 import modules from "./styles/CreditCardModal.module.css";
@@ -55,7 +55,9 @@ const waitModal = ({ isShowing, hide }) =>
                   />
                 </div>
                 <div className={modules.InputWrapper}>
-                  <button className={modules.CCPay}>Pay</button>
+                  <NavLink style={{ textDecoration: "none" }} to="/success">
+                    <button className={modules.CCPay}>Pay</button>
+                  </NavLink>
                 </div>
               </form>
             </div>
