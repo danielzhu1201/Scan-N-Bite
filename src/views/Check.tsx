@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-
+import { NavLink } from "react-router-dom";
 import CheckItem from "../components/CheckItems";
 import CheckOutButtion from "../components/CheckoutButton";
 import logo from "../logo.svg";
@@ -10,6 +10,7 @@ import firebaseApp from "../config/firebase";
 
 import modules from "../views/styles/CheckBody.module.css";
 import { render } from "@testing-library/react";
+import CheckoutButton from "../components/CheckoutButton";
 
 class Check extends Component<any, any> {
   constructor(props: any) {
@@ -66,6 +67,7 @@ class Check extends Component<any, any> {
           });
           this.setState({
             subtotal: total,
+            total: total,
             items: allItem,
           });
         });
@@ -99,13 +101,17 @@ class Check extends Component<any, any> {
           subTotal={this.state.subtotal}
           callBack={(val) => this.setState({ total: val })}
         />
-        <div>{this.state.total}</div>
-        <img
-          alt="Visa Checkout"
-          className="v-button"
-          role="button"
-          src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png"
-        />
+        <NavLink
+          to={{
+            pathname: "/pay",
+            paymentProps: {
+              amount: this.state.total,
+            },
+          }}
+          style={{ textDecoration: "none" }}
+        >
+          <button className={modules.Button}>Check Out</button>
+        </NavLink>
       </div>
     );
   }

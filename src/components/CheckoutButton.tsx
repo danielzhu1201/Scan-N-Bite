@@ -1,11 +1,25 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import modules from "./styles/CheckOutButton.module.css";
-export default function CheckoutButton(props) {
-  
+
+interface CheckOutButtonProps {
+  amount: number;
+}
+
+export default function CheckoutButton<CheckOutButton>({ amount }) {
   return (
     <div className={modules.Container}>
-      <button className={modules.button} onClick={() => props.beginCheckout(true)}>Check Out</button>
+      <Link
+        to={{
+          pathname: "/pay",
+          paymentProps: {
+            amount: amount,
+          },
+        }}
+        style={{ textDecoration: "none" }}
+      >
+        <button className={modules.button}>Check Out</button>
+      </Link>
     </div>
   );
 }

@@ -9,7 +9,7 @@ import ComHeader from "./components/ComHeader";
 import ComFooter from "./components/ComFooter";
 import Login from "./views/Login";
 import Home from "./Home";
-import MenuCategory from "./views/Category";
+import Pay from "./views/Pay";
 import FoodInfo from "./views/FoodInfo";
 import Profile from "./views/Profile";
 import CategoryPage from "./components/Categories/CategoryPage";
@@ -27,6 +27,7 @@ export default function Viewport() {
           <Route exact path="/food/:type/:id" component={FoodInfo} />
           <Route exact path="/check" component={Check} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/pay" component={Pay} />
           <Route component={NotFoundPage} />
         </Switch>
         <ComFooter />
