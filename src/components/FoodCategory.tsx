@@ -11,7 +11,11 @@ interface FoodCategoryProps {
 const FoodCategory: React.FC<FoodCategoryProps> = ({ category, desc, img }) => {
   return (
     <div className={modules.FoodCatogory}>
-      <img className={modules.FoodCategoryImg} src={img} />
+      <img
+        className={modules.FoodCategoryImg}
+        src={img}
+        alt={"Food Category"}
+      />
       <p className={modules.FoodCategoryCategoryName}>{category}</p>
       <p className={modules.FoodCategoryCategoryDesc}>{desc}</p>
     </div>

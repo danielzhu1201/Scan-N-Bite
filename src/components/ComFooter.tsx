@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import RestaurantOutlinedIcon from "@material-ui/icons/RestaurantOutlined";
 import LocalBarOutlinedIcon from "@material-ui/icons/LocalBarOutlined";

@@ -58,7 +58,10 @@ class Login extends Component<any, any> {
           lightBackground={true}
         />
         <div className={modules.loginHeadline}>
-          <img src={process.env.PUBLIC_URL + this.state.imageURL} />
+          <img
+            src={process.env.PUBLIC_URL + this.state.imageURL}
+            alt={"Login"}
+          />
           <p className={modules.loginTitle}>
             <span>Sign In for a Mobile</span>
             <span>Dining Experience!</span>

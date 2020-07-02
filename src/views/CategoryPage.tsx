@@ -38,16 +38,9 @@ class CategoryPage extends Component<any, any> {
       .get()
       .then((snapshot) => {
         const categories = Array();
-        const dishes = Array();
         snapshot.forEach((doc) => {
           const data = doc.data();
           categories.push(data);
-
-          var id = doc.id;
-          const innerRef = menuRef
-            .collection("category")
-            .doc(id.toString())
-            .collection("items");
         });
         this.setState({ categories: categories });
       })

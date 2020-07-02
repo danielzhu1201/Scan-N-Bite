@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Divider from "@material-ui/core/Divider";
 import CreditCardButton from "../components/CreditCardButton";

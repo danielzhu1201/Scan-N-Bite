@@ -45,7 +45,7 @@ class TypeOfFood extends Component<any, any> {
           this.props.match.params.type.slice(1)
         }`}</div>
         <div className={modules.ItemContainer}>
-          {this.state.dishes.length == 0 && (
+          {this.state.dishes.length === 0 && (
             <ItemOverview
               itemName="Item name here!"
               desc="Description goes here. If too long If too long If toong If toong If toong If toong If toong If too long, truncatruncatrunca...."

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Divider from "@material-ui/core/Divider";
 
@@ -12,7 +12,7 @@ interface HeadlineProps {
 const Headline: React.FC<HeadlineProps> = ({ title, imageURL }) => {
   return (
     <div className={modules.Headline}>
-      <img className={modules.HeadlineImg} src={imageURL} />
+      <img className={modules.HeadlineImg} src={imageURL} alt={"Headline"} />
       <div className={modules.HeadlineTitle}>{title}</div>
       <Divider style={{ width: "80%", margin: "10px 0px" }} />
     </div>
