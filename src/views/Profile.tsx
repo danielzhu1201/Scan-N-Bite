@@ -65,7 +65,7 @@ const Profile: React.FC = () => {
           <div>
             <Headline title={userName} imageURL="/Fruits.jpg" />
             <div className={modules.wrapper}>
-              <NavLink style={{ textDecoration: "none" }} to="/">
+              <NavLink style={{ textDecoration: "none" }} to="/orders">
                 <div className={modules.ProfileIcon}>
                   <RestoreOutlinedIcon
                     classes={{
@@ -95,7 +95,7 @@ const Profile: React.FC = () => {
                   />
                 </div>
                 <div className={modules.ProfileText}>
-                  <p className={modules.ProfileTexttext}>About Me</p>
+                  <p className={modules.ProfileTexttext}>About This Project</p>
                 </div>
                 <div className={modules.ProfileArrow}>
                   <NavigateNextOutlinedIcon
